@@ -18,7 +18,7 @@ const Banner = () => {
             </h1>
           </div>
           <div className="my-7 text-center lg:text-start">
-            <button className="text-sm md:text-xl font-semibold hover:shadow-xl bg-[#002f66] text-white py-3 px-6 md:py-5 md:px-14 rounded-full hover:bg-hoblue">
+            <button className="text-sm md:text-xl font-semibold hover:shadow-xl bg-navyblue text-white py-3 px-6 md:py-5 md:px-14 rounded-full hover:bg-hoblue">
               Get Started
             </button>
           </div>

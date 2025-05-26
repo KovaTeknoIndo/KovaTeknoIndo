@@ -1,10 +1,9 @@
 "use client";
 import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
-import React from "react";
-import { Bars3Icon } from "@heroicons/react/24/outline";
-import Drawer from "./Drawer";
-import Drawerdata from "./Drawerdata";
+import Image from "next/image";
+import React, { useEffect, useRef, useState, ReactNode } from "react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Contactusform from "./Contactus";
 
 interface NavigationItem {
@@ -26,28 +25,60 @@ function classNames(...classes: string[]) {
 }
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [showNav, setShowNav] = useState(true);
+  const [isTop, setIsTop] = useState(true);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsTop(currentScrollY === 0);
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > 10) {
+        setShowNav(false); // scroll down
+      } else {
+        setShowNav(true); // scroll up
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <Disclosure as="nav" className="navbar">
+    <Disclosure
+      as="nav"
+      className={classNames(
+        "fixed top-0 left-0 right-0 z-50 transition-transform duration-300 shadow-md bg-white",
+        isTop ? "bg-transparent" : "",
+        "translate-y-0",
+        showNav ? "lg:translate-y-0" : "lg:-translate-y-full"
+      )}
+    >
       <>
         <div className="mx-auto max-w-7xl p-3 md:p-4 lg:px-8">
-          <div className="relative flex h-12 sm:h-20 items-center">
+          <div className="relative flex h-12 lg:h-20 items-center">
             <div className="flex flex-1 items-center sm:justify-between">
               {/* LOGO */}
-
-              <div className="flex flex-shrink-0 items-center border-right">
-                <Link
-                  href="/"
-                  className="text-2xl sm:text-4xl font-semibold text-black"
-                >
-                  Kova TeknoIndo
+              <div className="flex flex-shrink-0 items-center">
+                <Link href="/">
+                  <div className="relative w-[120px] lg:w-40 h-[150px] mr-20">
+                    <Image
+                      src="/images/navbar/kovaLogo1.png"
+                      alt="Kova Logo"
+                      fill
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
                 </Link>
               </div>
 
               {/* LINKS */}
-
-              <div className="hidden lg:flex items-center border-right ">
+              <div className="hidden lg:flex items-center">
                 <div className="flex justify-end space-x-4">
                   {navigation.map((item) => (
                     <Link
@@ -55,9 +86,9 @@ const Navbar = () => {
                       href={item.href}
                       className={classNames(
                         item.current
-                          ? "bg-gray-900"
-                          : "navlinks hover:text-black",
-                        "px-3 py-4 rounded-md text-lg font-normal"
+                          ? "bg-gray-700"
+                          : "navlinks hover:text-black transition ease-in-out duration-300",
+                        "px-3 py-4 rounded-md text-[20px] font-normal"
                       )}
                       aria-current={item.href ? "page" : undefined}
                     >
@@ -66,31 +97,108 @@ const Navbar = () => {
                   ))}
                 </div>
               </div>
-              {/* <button className='hidden lg:flex justify-end text-xl font-semibold bg-transparent py-4 px-6 lg:px-12 navbutton rounded-full hover:bg-navyblue hover:text-white'>Contact us</button> */}
               <Contactusform />
             </div>
 
-            {/* DRAWER FOR MOBILE VIEW */}
-
-            {/* DRAWER ICON */}
-
+            {/* DRAWER BUTTON (MOBILE) */}
             <div className="block lg:hidden">
               <Bars3Icon
-                className="block h-6 w-6"
+                className="block h-7 w-7"
                 aria-hidden="true"
                 onClick={() => setIsOpen(true)}
               />
             </div>
 
-            {/* DRAWER LINKS DATA */}
-
+            {/* DRAWER COMPONENT */}
             <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-              <Drawerdata />
+              <DrawerData />
             </Drawer>
           </div>
         </div>
       </>
     </Disclosure>
+  );
+};
+
+interface DrawerProps {
+  children: ReactNode;
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+}
+
+const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
+  return (
+    <div
+      className={`fixed top-0 left-0 transform ease-in-out transition-all duration-500 z-[60] h-screen ${
+        isOpen ? "opacity-100 translate-x-0" : "opacity-100 -translate-x-full"
+      }`}
+    >
+      <div
+        className={`w-[80%] max-w-lg top-0 bottom-0 left-0 absolute bg-white h-full shadow-xl duration-500 ease-in-out transition-all transform ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <article className="relative max-w-lg pb-10 flex flex-col space-y-4 h-full">
+          <header className="px-3 py-3 flex items-center justify-between">
+            <div className="flex  items-center">
+              <Link href="/" className="text-2xl font-semibold text-black">
+                <Image
+                  src="/images/navbar/kovaLogo1.png"
+                  alt="Kova Logo"
+                  width={120}
+                  height={60}
+                  priority
+                />
+              </Link>
+            </div>
+            <XMarkIcon
+              className="block h-7 w-7 cursor-pointer"
+              onClick={() => setIsOpen(false)}
+            />
+          </header>
+          <div onClick={() => setIsOpen(false)}>{children}</div>
+        </article>
+      </div>
+      <section
+        className="w-screen h-full cursor-pointer"
+        onClick={() => setIsOpen(false)}
+      ></section>
+    </div>
+  );
+};
+
+const DrawerData = () => {
+  return (
+    <div className="rounded-md max-w-sm w-full mx-auto absolute">
+      <div className="flex-1 space-y-4 py-1">
+        <div className="sm:block">
+          <div className="px-5 flex flex-col gap-4">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={classNames(
+                  item.current
+                    ? "bg-gray-900 text-purple"
+                    : "text-black text-xl hover:bg-gray-700 hover:text-purple",
+                  "block rounded-md text-base font-medium"
+                )}
+                aria-current={item.current ? "page" : undefined}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <a
+              href="https://wa.link/r7eklb"
+              target="_blank"
+              className="mt-2 text-center bg-blueprimary w-full hover:text-white text-white border border-purple font-medium py-2 px-4 rounded "
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

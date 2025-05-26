@@ -1,60 +1,64 @@
-"use client"
-import { Dialog, Transition } from '@headlessui/react';
-import { Fragment, useState } from 'react';
-import Link from 'next/link';
-
+"use client";
+import { Dialog, Transition } from "@headlessui/react";
+import { Fragment, useState } from "react";
+import Link from "next/link";
 
 const Contactusform = () => {
-    let [isOpen, setIsOpen] = useState(false)
+  let [isOpen, setIsOpen] = useState(false);
 
-    const [inputValues, setInputValues] = useState({
-        input1: '',
-        input2: '',
-        input3: ''
-    });
+  const [inputValues, setInputValues] = useState({
+    input1: "",
+    input2: "",
+    input3: "",
+  });
 
-    const handleChange = (e: { target: { name: string; value: string; }; }) => {
-        const { name, value } = e.target;
-        setInputValues(prevState => ({ ...prevState, [name]: value }));
-    }
+  const handleChange = (e: { target: { name: string; value: string } }) => {
+    const { name, value } = e.target;
+    setInputValues((prevState) => ({ ...prevState, [name]: value }));
+  };
 
-    const handleClick = () => {
-        alert(`Name: ${inputValues.input1}, Email-address: ${inputValues.input2}, Message: ${inputValues.input3}`);
-        setIsOpen(false)
-    }
+  const handleClick = () => {
+    alert(
+      `Name: ${inputValues.input1}, Email-address: ${inputValues.input2}, Message: ${inputValues.input3}`
+    );
+    setIsOpen(false);
+  };
 
-    // FORM SUBMIT
-    const handleSubmit = (event: { preventDefault: () => void; }) => {
-        event.preventDefault();
-        // handle form submission
-    };
+  // FORM SUBMIT
+  const handleSubmit = (event: { preventDefault: () => void }) => {
+    event.preventDefault();
+    // handle form submission
+  };
 
-    const isDisabled = Object.values(inputValues).some((value) => value === '');
+  const isDisabled = Object.values(inputValues).some((value) => value === "");
 
+  const closeModal = () => {
+    setIsOpen(false);
+  };
 
-    const closeModal = () => {
-        setIsOpen(false)
-    }
+  const openModal = () => {
+    setIsOpen(true);
+  };
 
-    const openModal = () => {
-        setIsOpen(true)
-    }
-
-    return (
-        <>
-            <div className=" inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto md:ml-6 sm:pr-0">
-                {/* <div className='lg:hidden'>
+  return (
+    <>
+      <div className=" inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto md:ml-6 sm:pr-0">
+        {/* <div className='lg:hidden'>
                     <button type="button" className='bg-navyblue w-full hover:text-white text-white border border-purple font-medium py-2 px-4 rounded' onClick={openModal}>
                         Contact Us
                     </button>
                 </div> */}
-                <div className='hidden lg:block'>
-                    <button type="button" className='justify-end text-xl font-semibold bg-transparent py-4 px-6 lg:px-12 navbutton rounded-full hover:bg-navyblue hover:text-white' onClick={openModal}>
-                        Contact Us
-                    </button>
-                </div>
-            </div>
-
+        <div className="hidden lg:block">
+          <a
+            href="https://wa.link/r7eklb"
+            target="_blank"
+            className="justify-end text-xl font-semibold bg-transparent py-4 px-6 lg:px-12 navbutton rounded-full hover:bg-[#ecf5ff] transition ease-in-out duration-300"
+          >
+            Contact Us
+          </a>
+        </div>
+      </div>
+      {/* 
             <Transition appear show={isOpen} as={Fragment}>
                 <Dialog as="div" className="relative z-50" onClose={closeModal}>
                     <Transition.Child
@@ -143,16 +147,16 @@ const Contactusform = () => {
                                         <button type="button"
                                             onClick={closeModal}
                                             className="py-3 px-5 mt-2 text-sm font-medium w-50 text-center text-white rounded-lg bg-red hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Close</button>
-                                    </div> */}
+                                    </div> /}
 
                                 </Dialog.Panel>
                             </Transition.Child>
                         </div>
                     </div>
                 </Dialog>
-            </Transition>
-        </>
-    )
-}
+            </Transition> */}
+    </>
+  );
+};
 
 export default Contactusform;
