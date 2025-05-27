@@ -7,10 +7,10 @@ const names = [
   {
     heading: "Basic",
     price: 500000,
-    user: "1-3 Pages, Responsive",
-    button: "Order Now",
-    profiles: "Domain + Hosting for 1 Year",
-    posts: "1x Revision",
+    user: "1–3 Halaman, Responsif",
+    button: "Pesan Sekarang",
+    profiles: "Domain + Hosting 1 Tahun",
+    posts: "1x Revisi",
     templates: "",
     view: "",
     support: "",
@@ -19,10 +19,10 @@ const names = [
   {
     heading: "Standard",
     price: 1500000,
-    user: "5 Pages, Custom Design",
-    button: "Order Now",
-    profiles: "WhatsApp Contact Integration",
-    posts: "3x Revisions",
+    user: "5 Halaman, Desain Kustom",
+    button: "Pesan Sekarang",
+    profiles: "Integrasi Kontak WhatsApp",
+    posts: "3x Revisi",
     templates: "",
     view: "",
     support: "",
@@ -31,12 +31,12 @@ const names = [
   {
     heading: "Premium",
     price: 3000000,
-    user: "Unlimited Pages",
-    button: "Order Now",
-    profiles: "Payment Integration",
-    posts: "Basic SEO",
-    templates: "Simple Admin Panel",
-    view: "1 Month Maintenance",
+    user: "Halaman Tak Terbatas",
+    button: "Pesan Sekarang",
+    profiles: "Integrasi Pembayaran",
+    posts: "SEO Dasar",
+    templates: "Panel Admin Sederhana",
+    view: "Pemeliharaan 1 Bulan",
     support: "",
     category: "monthly",
   },
@@ -56,11 +56,11 @@ const Manage = () => {
   );
 
   return (
-    <div id="services-section">
+    <section id="services-section">
       <div className="mx-auto max-w-7xl sm:py-20 lg:px-8 my-16 pt-20 md:pt-40">
         <h3 className="text-center text-4xl lg:text-65xl lg:leading-[90px] font-bold text-blueprimary">
-          Manage All Your Website Projects <br />
-          From One Place.
+          Kelola Semua Proyek Website Anda <br />
+          Dalam Satu Tempat.
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16 mx-5 gap-8">
@@ -85,11 +85,13 @@ const Manage = () => {
                 {items.heading}
               </h2>
 
+              <div className="mb-1 text-sm font-medium opacity-70">
+                Mulai dari
+              </div>
               <div className="mb-3">
-                <span className="text-[40px] sm:text-5xl  font-bold">
+                <span className="text-[40px] sm:text-5xl font-bold">
                   Rp{items.price.toLocaleString("id-ID")}
                 </span>
-                {/* <span className="text-sm"> / project</span> */}
               </div>
 
               <button
@@ -101,6 +103,7 @@ const Manage = () => {
               >
                 {items.button}
               </button>
+
               <hr
                 className={`text-md font-medium mb-3 ${
                   items.heading === "Premium" ? "text-white" : "text-darkgrey"
@@ -149,7 +152,7 @@ const Manage = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

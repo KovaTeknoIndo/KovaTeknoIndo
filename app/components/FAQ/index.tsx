@@ -5,36 +5,36 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    question: "Do you accept projects from international clients?",
+    question: "Apakah kalian menerima proyek dari klien internasional?",
     answer:
-      "Absolutely. Although we are a new agency, we're built to work remotely and are ready to meet global standards in both quality and communication.",
+      "Tentu saja. Meskipun kami adalah agensi baru, kami dibangun untuk bekerja secara remote dan siap memenuhi standar global baik dari segi kualitas maupun komunikasi.",
   },
   {
-    question: "What technologies do you use?",
+    question: "Teknologi apa yang kalian gunakan?",
     answer:
-      "We use modern technologies like React, Laravel, Tailwind, and Next.js. We're also flexible and can adapt to your preferred tech stack based on project needs.",
+      "Kami menggunakan teknologi modern seperti React, Laravel, Tailwind, Scss, dan Next.js. Kami juga fleksibel dan dapat menyesuaikan dengan stack teknologi pilihan Anda sesuai kebutuhan proyek.",
   },
   {
-    question: "Do you have a portfolio?",
+    question: "Apakah kalian memiliki portofolio?",
     answer:
-      "We are currently working on our first few projects. While our team is newly formed, each member brings individual experience from diverse digital backgrounds.",
+      "Kami saat ini sedang mengerjakan beberapa proyek pertama kami. Meskipun tim kami baru terbentuk, setiap anggota memiliki pengalaman individu dari berbagai latar belakang digital.",
   },
   {
-    question: "How long does a typical project take?",
+    question: "Berapa lama waktu pengerjaan sebuah proyek?",
     answer:
-      "It depends on the scope. A simple landing page usually takes 1–2 weeks, while a web application may take longer. We'll provide a clear timeline from the start.",
+      "Tergantung pada cakupan proyek. Landing page sederhana biasanya memakan waktu 1–2 minggu, sedangkan aplikasi web bisa lebih lama. Kami akan memberikan timeline yang jelas sejak awal.",
   },
 ];
 
 const FAQ = () => {
   return (
-    <div
+    <section
       id="faq-section"
       className="mx-auto max-w-7xl py-24 lg:px-8 my-16 faq-bg lg:rounded-2xl"
     >
       <h3 className="text-xl font-normal text-white text-center mb-6">FAQ</h3>
-      <h2 className="text-4xl lg:text-6xl font-semibold text-center text-white">
-        Frequently asked <br /> questions.
+      <h2 className="text-center text-4xl lg:text-65xl lg:leading-[80px] font-bold text-white">
+        Pertanyaan yang Sering <br /> Diajukan.
       </h2>
       <div className="w-full px-4 pt-16">
         {faqs.map((item, index) => (
@@ -76,7 +76,7 @@ const FAQ = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

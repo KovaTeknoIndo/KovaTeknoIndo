@@ -16,45 +16,45 @@ interface DataType {
 const postData: DataType[] = [
   {
     name: "Robert Fox",
-    profession: "CEO, Parkview Int.Ltd",
+    profession: "CEO, Parkview Int. Ltd",
     comment:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
+      "Tim mereka sangat profesional dan responsif. Proyek kami diselesaikan tepat waktu dengan kualitas yang melebihi ekspektasi. Sangat direkomendasikan!",
     imgSrc: "/images/testimonial/user1.svg",
   },
   {
     name: "Leslie Alexander",
-    profession: "CEO, Parkview Int.Ltd",
+    profession: "Founder, Digital Bloom",
     comment:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
+      "Saya sangat puas dengan hasil kerjanya. Komunikasi lancar dan desain web yang dibuat sangat modern serta mobile-friendly.",
     imgSrc: "/images/testimonial/user2.svg",
   },
   {
     name: "Cody Fisher",
-    profession: "CEO, Parkview Int.Ltd",
+    profession: "Marketing Director, NeoTech",
     comment:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
+      "Kami bekerja sama dalam pembuatan dashboard internal. Mereka sangat memahami kebutuhan bisnis dan memberikan solusi yang efisien.",
     imgSrc: "/images/testimonial/user3.svg",
   },
   {
-    name: "Robert Fox",
-    profession: "CEO, Parkview Int.Ltd",
+    name: "Eleanor Pena",
+    profession: "Owner, Pena Studio",
     comment:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
+      "Sangat senang bekerja dengan tim ini! Mereka fleksibel, cepat, dan penuh ide kreatif. Akan kembali untuk proyek selanjutnya.",
+    imgSrc: "/images/testimonial/user2.svg",
+  },
+  {
+    name: "Wade Warren",
+    profession: "COO, Bright Solutions",
+    comment:
+      "Salah satu pengalaman kerja remote terbaik yang pernah saya alami. Mereka menjaga kualitas dan selalu terbuka untuk feedback.",
+    imgSrc: "/images/testimonial/user3.svg",
+  },
+  {
+    name: "Jenny Wilson",
+    profession: "UI/UX Consultant",
+    comment:
+      "Desain UI yang diberikan sangat rapi dan sesuai prinsip UX. Mereka sangat detail dan terbuka untuk revisi.",
     imgSrc: "/images/testimonial/user1.svg",
-  },
-  {
-    name: "Leslie Alexander",
-    profession: "CEO, Parkview Int.Ltd",
-    comment:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
-    imgSrc: "/images/testimonial/user2.svg",
-  },
-  {
-    name: "Cody Fisher",
-    profession: "CEO, Parkview Int.Ltd",
-    comment:
-      "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour",
-    imgSrc: "/images/testimonial/user3.svg",
   },
 ];
 
@@ -67,7 +67,7 @@ export default class MultipleItems extends Component {
       infinite: true,
       slidesToShow: 3,
       // centerMode: true,
-      slidesToScroll: 2,
+      slidesToScroll: 1,
       arrows: false,
       autoplay: false,
       speed: 500,
@@ -77,7 +77,7 @@ export default class MultipleItems extends Component {
         {
           breakpoint: 1200,
           settings: {
-            slidesToShow: 3,
+            slidesToShow: 2,
             slidesToScroll: 1,
             infinite: true,
             dots: false,
@@ -105,17 +105,17 @@ export default class MultipleItems extends Component {
     };
 
     return (
-      <div className=" pt-40 pb-32 lg:py-32" id="testimonial-section">
+      <div className=" pt-10 md:pt-20 pb-0 lg:py-32" id="testimonial-section">
         <div className="mx-auto max-w-7xl sm:py-4 lg:px-8 ">
           <div className="text-center">
             <h3 className="text-4xl sm:text-6xl font-bold text-black my-3">
-              See what others are saying.
+              Apa kata klien kami?
             </h3>
             <h3 className="text-4xl sm:text-6xl font-bold text-black text-opacity-50 lg:mr-48 my-4">
-              See what others are saying.
+              Apa kata klien kami?
             </h3>
             <h3 className="text-4xl sm:text-6xl font-bold text-black text-opacity-25 lg:-mr-32 my-4">
-              See what others are saying.
+              Apa kata klien kami?
             </h3>
           </div>
 

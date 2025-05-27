@@ -13,11 +13,11 @@ interface NavigationItem {
 }
 
 const navigation: NavigationItem[] = [
-  { name: "About Us", href: "#aboutus-section", current: false },
-  { name: "Services", href: "#services-section", current: false },
+  { name: "Tentang", href: "#aboutus-section", current: false },
+  { name: "Layanan", href: "#services-section", current: false },
   { name: "FAQ", href: "#faq-section", current: false },
-  { name: "Blog", href: "#blog-section", current: false },
-  { name: "Testimonial", href: "#testimonial-section", current: false },
+  // { name: "Blog", href: "#blog-section", current: false },
+  { name: "Testimoni", href: "#testimonial-section", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -193,7 +193,7 @@ const DrawerData = () => {
               target="_blank"
               className="mt-2 text-center bg-blueprimary w-full hover:text-white text-white border border-purple font-medium py-2 px-4 rounded "
             >
-              Contact Us
+              Kontak Kami
             </a>
           </div>
         </div>

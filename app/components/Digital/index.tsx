@@ -2,33 +2,35 @@ import Image from "next/image";
 
 const Digital = () => {
   return (
-    <div className="bg-blueprimary bg-digital lg:bg-cover lg:bg-center">
-      <div className=" relative mx-auto max-w-7xl px-4 my-20 pb-[120px] lg:pb-30 lg:px-8 ">
-        <div className="pt-24 lg:pl-24 ">
-          <h3 className="text-xl font-normal text-white mb-5 tracking-widest text-center md:text-start">
-            WHO WE ARE
+    <section className="bg-blueprimary bg-digital bg-cover bg-center">
+      <div className="relative mx-auto max-w-7xl px-4 my-20 pb-[120px] lg:px-8">
+        <div className="pt-24 lg:pl-24">
+          <h3 className="text-xl font-normal text-white mb-5 tracking-widest text-center md:text-left">
+            SIAPA KAMI
           </h3>
-          <h4 className="text-center md:text-start text-4xl lg:text-65xl font-bold text-white mb-8 lg:mb-11">
-            We build modern, fast websites to grow your business.
+          <h4 className="text-center md:text-left text-3xl lg:text-[55px] lg:leading-[64px] mb-10 font-bold text-white">
+            Kami membangun website modern dan cepat untuk mengembangkan
+            bisnismu.
           </h4>
-          <div className=" text-center flex justify-start items-center md:text-start gap-5 flex-col md:flex-row lg:pb-20">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-5">
             <a
               href="#services-section"
-              className="md:text-xl font-semibold text-white bg-orangecustom py-3 md:py-4 px-6 md:px-12 w-full md:w-[auto] hover:bg-orangehover transition duration-300 rounded-full"
+              className="w-full md:w-auto text-white text-lg md:text-xl font-semibold bg-orangecustom hover:bg-orangehover transition duration-300 py-3 md:py-4 px-6 md:px-12 rounded-full text-center"
             >
-              Get started
+              Mulai Sekarang
             </a>
             <a
               href="https://wa.link/r7eklb"
               target="_blank"
-              className="md:text-xl font-semibold text-white border border-orangecustom w-full md:w-[auto] py-3 md:py-4 px-6 md:px-12 rounded-full  transition duration-300 hover:text-[#a2a2a2]"
+              rel="noopener noreferrer"
+              className="w-full md:w-auto text-white text-lg md:text-xl font-semibold border border-orangecustom hover:text-[#a2a2a2] transition duration-300 py-3 md:py-4 px-6 md:px-12 rounded-full text-center"
             >
-              Contact
+              Hubungi Kami
             </a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

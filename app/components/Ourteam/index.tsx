@@ -1,27 +1,27 @@
 import Image from "next/image";
 
-const index = () => {
+const Index = () => {
   return (
-    <div className="relative mx-auto max-w-7xl px-4 mt-20 lg:pt-20 lg:pb-0 lg:px-8">
-      <h2 className="text-4xl text-blueprimary md:text-65xl font-bold text-center">
-        Our team belives you deserve <br className="hidden lg:block" /> only the
-        best.
+    <section className="relative mx-auto max-w-7xl px-4 mt-20 lg:pt-20 lg:pb-0 lg:px-8">
+      <h2 className="text-center text-4xl lg:text-65xl lg:leading-[90px] font-bold text-blueprimary">
+        Tim kami percaya kamu pantas <br className="hidden lg:block" />{" "}
+        mendapatkan yang terbaik.
       </h2>
       <h3 className="text-[16px] md:text-2xl font-medium text-center pt-4 md:pt-10 opacity-50">
-        We are committed to providing efficient, modern, and tailored <br />{" "}
-        digital solutions.
+        Kami berkomitmen memberikan solusi digital <br />
+        yang efisien, modern, dan sesuai kebutuhanmu.
       </h3>
       <div className="grid grid-cols-1 py-9 md:mt-16">
         <Image
           src="/images/team/teamimg.jpg"
-          alt="office-image"
+          alt="gambar-kantor"
           className="rounded-2xl"
           height={684}
           width={1296}
         />
       </div>
-    </div>
+    </section>
   );
 };
 
-export default index;
+export default Index;
