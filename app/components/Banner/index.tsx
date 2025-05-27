@@ -3,14 +3,14 @@ import Image from "next/image";
 const Banner = () => {
   return (
     <div className="mx-auto max-w-7xl my-10 sm:py-10 px-6 md:px-8">
-      <div className="pt-7 md:pt-0 xl:pt-6 my-16 relative flex flex-col lg:flex-row">
+      <div className="pt-7 md:pt-0 xl:pt-8 my-16 relative flex flex-col lg:flex-row">
         {/* COLUMN-1 */}
 
         <div className="mx-auto sm:mx-0 md:pt-[26px]">
           <div className="py-3 text-start">
-            <button className="text-blueprimary bg-[#ff850239] py-2 md:py-3 px-5 md:px-6 text-[15px] md:text-[24px] font-bold rounded-full tracking-wider">
+            <span className="text-blueprimary bg-[#ff850239] py-2 md:py-3 px-5 md:px-6 text-[15px] md:text-[24px] font-bold rounded-full tracking-wider">
               Software Agency
-            </button>
+            </span>
           </div>
           <div className="py-2">
             <h1 className="text-[50px] md:text-80xl font-bold text-darkpurple leading-[60px] ">
