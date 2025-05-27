@@ -3,7 +3,7 @@ import Image from "next/image";
 const Dedicated = () => {
   return (
     <section className="relative">
-      <div className="mx-auto max-w-7xl px-4 my-20 sm:py-20 lg:px-8">
+      <div className="px-4 mx-auto my-20 max-w-7xl sm:py-20 lg:px-8">
         <div className="relative">
           <Image
             src="/images/dedicated/spiral.png"
@@ -18,7 +18,7 @@ const Dedicated = () => {
           <div className="relative pt-[40px] md:pt-[80px] flex flex-col gap-10">
             <p className="flex items-center gap-3 md:gap-10 justify-end text-end text-[18px] md:text-[35px] font-medium text-orangecustom">
               <Image
-                src="/images/Dedicated/failed.svg"
+                src="/images/dedicated/failed.svg"
                 alt="fail"
                 width={33}
                 height={33}
@@ -31,7 +31,7 @@ const Dedicated = () => {
               The design is unattractive and <br /> doesn’t reflect the brand
               identity.
               <Image
-                src="/images/Dedicated/failed.svg"
+                src="/images/dedicated/failed.svg"
                 alt="fail"
                 width={33}
                 height={33}
@@ -40,7 +40,7 @@ const Dedicated = () => {
             </p>
             <p className="flex items-center gap-3 md:gap-10 justify-end text-end text-[18px] md:text-[35px] font-medium text-orangecustom">
               <Image
-                src="/images/Dedicated/failed.svg"
+                src="/images/dedicated/failed.svg"
                 alt="fail"
                 width={33}
                 height={33}
@@ -51,7 +51,7 @@ const Dedicated = () => {
             <p className=" flex items-center gap-3 md:gap-10 justify-start text-start text-[18px] md:text-[35px] font-medium text-orangecustom">
               Hard to be found online.
               <Image
-                src="/images/Dedicated/failed.svg"
+                src="/images/dedicated/failed.svg"
                 alt="fail"
                 width={33}
                 height={33}
@@ -61,7 +61,7 @@ const Dedicated = () => {
           </div>
 
           {/* solusi */}
-          <div className="mt-20 flex items-center justify-center">
+          <div className="flex items-center justify-center mt-20">
             <h1 className="text-center text-[26px] md:text-[50px] font-bold text-blueprimary relative inline-block before:content-[''] before:absolute before:w-[60px] before:h-[4px] before:bg-[#002f66] before:-top-5 before:left-1/2 before:-translate-x-1/2">
               How We Help
             </h1>
@@ -70,7 +70,7 @@ const Dedicated = () => {
           <div className="relative pt-[40px] md:pt-[80px] flex flex-col gap-10">
             <p className="flex items-center gap-3 md:gap-10 justify-end text-end text-[18px] md:text-[35px] font-medium text-solutiongreen">
               <Image
-                src="/images/Dedicated/checklist.svg"
+                src="/images/dedicated/checklist.svg"
                 alt="fail"
                 width={33}
                 height={33}
@@ -81,7 +81,7 @@ const Dedicated = () => {
             <p className=" flex items-center gap-3 md:gap-10 justify-start text-start text-[18px] md:text-[35px] font-medium text-solutiongreen">
               Branding in accordance <br /> with identity
               <Image
-                src="/images/Dedicated/checklist.svg"
+                src="/images/dedicated/checklist.svg"
                 alt="fail"
                 width={33}
                 height={33}
@@ -90,7 +90,7 @@ const Dedicated = () => {
             </p>
             <p className="flex items-center gap-3 md:gap-10 justify-end text-end text-[18px] md:text-[35px] font-medium text-solutiongreen">
               <Image
-                src="/images/Dedicated/checklist.svg"
+                src="/images/dedicated/checklist.svg"
                 alt="fail"
                 width={33}
                 height={33}
@@ -101,7 +101,7 @@ const Dedicated = () => {
             <p className=" flex items-center gap-3 md:gap-10 justify-start text-start text-[18px] md:text-[35px] font-medium text-solutiongreen">
               Easy to find on Google
               <Image
-                src="/images/Dedicated/checklist.svg"
+                src="/images/dedicated/checklist.svg"
                 alt="fail"
                 width={33}
                 height={33}
