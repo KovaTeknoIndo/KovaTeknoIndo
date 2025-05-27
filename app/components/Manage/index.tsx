@@ -58,7 +58,10 @@ const Manage = () => {
   return (
     <section id="services-section">
       <div className="mx-auto max-w-7xl sm:py-20 lg:px-8 my-16 pt-20 md:pt-40">
-        <h3 className="text-center text-4xl lg:text-65xl lg:leading-[90px] font-bold text-blueprimary">
+        <h3
+          data-aos="fade-down"
+          className="text-center text-4xl lg:text-65xl lg:leading-[90px] font-bold text-blueprimary"
+        >
           Kelola Semua Proyek Website Anda <br />
           Dalam Satu Tempat.
         </h3>
@@ -66,6 +69,7 @@ const Manage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16 mx-5 gap-8">
           {filteredData.map((items, i) => (
             <div
+              data-aos="fade-up"
               key={i}
               className={`manageTabs text-center p-10 border rounded-xl shadow-sm transition-transform duration-500 ease-in-out ${
                 items.heading === "Premium"

@@ -22,6 +22,7 @@ const Banner = () => {
           </div>
           <div className="flex gap-2 my-6 text-center md:my-7 md:text-start md:gap-5">
             <a
+              data-aos="zoom-in"
               href="#services-section"
               className="py-2 md:py-5 px-[14px] md:px-[60px] bg-blueprimary text-[14px] md:text-[23px] text-white rounded-full flex items-center gap-2 md:gap-4"
             >
@@ -36,6 +37,7 @@ const Banner = () => {
             </a>
 
             <a
+              data-aos="zoom-in"
               href="https://wa.link/r7eklb"
               target="_blank"
               className="py-2 md:py-5 px-[14px] md:px-[60px] border border-orangecustom font-semibold text-[14px] md:text-[23px] text-orangecustom rounded-full flex items-center gap-2 md:gap-4"

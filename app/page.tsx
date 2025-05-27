@@ -1,13 +1,23 @@
-import Banner from "./components/Banner/index";
-import Aboutus from "./components/Aboutus/index";
-import Dedicated from "./components/Dedicated/index";
-import Digital from "./components/Digital/index";
-import Ourteam from "./components/Ourteam/index";
-import Manage from "./components/Manage/index";
-import FAQ from "./components/FAQ/index";
-import Testimonials from "./components/Testimonials/index";
+"use client";
+
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+import Banner from "./components/Banner";
+import Aboutus from "./components/Aboutus";
+import Dedicated from "./components/Dedicated";
+import Digital from "./components/Digital";
+import Ourteam from "./components/Ourteam";
+import Manage from "./components/Manage";
+import FAQ from "./components/FAQ";
+import Testimonials from "./components/Testimonials";
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <main className="overflow-x-hidden">
       <Banner />

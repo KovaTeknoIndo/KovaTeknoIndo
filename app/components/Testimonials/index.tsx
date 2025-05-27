@@ -105,23 +105,35 @@ export default class MultipleItems extends Component {
     };
 
     return (
-      <div className=" pt-10 md:pt-20 pb-0 lg:py-32" id="testimonial-section">
+      <section
+        className=" pt-10 md:pt-20 pb-0 lg:py-32"
+        id="testimonial-section"
+      >
         <div className="mx-auto max-w-7xl sm:py-4 lg:px-8 ">
           <div className="text-center">
-            <h3 className="text-4xl sm:text-6xl font-bold text-black my-3">
+            <h3
+              data-aos="fade-down"
+              className="text-4xl sm:text-6xl font-bold text-black my-3"
+            >
               Apa kata klien kami?
             </h3>
-            <h3 className="text-4xl sm:text-6xl font-bold text-black text-opacity-50 lg:mr-48 my-4">
+            <h3
+              data-aos="fade-down"
+              className="text-4xl sm:text-6xl font-bold text-black text-opacity-50 lg:mr-48 my-4"
+            >
               Apa kata klien kami?
             </h3>
-            <h3 className="text-4xl sm:text-6xl font-bold text-black text-opacity-25 lg:-mr-32 my-4">
+            <h3
+              data-aos="fade-down"
+              className="text-4xl sm:text-6xl font-bold text-black text-opacity-25 lg:-mr-32 my-4"
+            >
               Apa kata klien kami?
             </h3>
           </div>
 
           <Slider {...settings}>
             {postData.map((items, i) => (
-              <div key={i} className="relative">
+              <div data-aos="fade-up" key={i} className="relative">
                 <div className="bg-white test-sha m-3 p-10 my-20 rounded-3xl border">
                   <Image
                     src={items.imgSrc}
@@ -156,7 +168,7 @@ export default class MultipleItems extends Component {
             ))}
           </Slider>
         </div>
-      </div>
+      </section>
     );
   }
 }

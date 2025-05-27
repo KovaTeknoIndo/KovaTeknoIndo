@@ -32,13 +32,22 @@ const FAQ = () => {
       id="faq-section"
       className="mx-auto max-w-7xl py-24 lg:px-8 my-16 faq-bg lg:rounded-2xl"
     >
-      <h3 className="text-xl font-normal text-white text-center mb-6">FAQ</h3>
-      <h2 className="text-center text-4xl lg:text-65xl lg:leading-[80px] font-bold text-white">
-        Pertanyaan yang Sering <br /> Diajukan.
+      <h3
+        data-aos="fade-down"
+        className="text-xl font-normal text-white text-center mb-6"
+      >
+        FAQ
+      </h3>
+      <h2
+        data-aos="fade-zoom-in"
+        className="text-center text-4xl lg:text-65xl lg:leading-[80px] font-bold text-white"
+      >
+        Pertanyaan yang Sering <br className="hidden sm:block" /> Diajukan.
       </h2>
       <div className="w-full px-4 pt-16">
         {faqs.map((item, index) => (
           <div
+            data-aos="fade-up"
             key={index}
             className="mx-auto w-full max-w-5xl rounded-2xl bg-white py-4 px-6 mb-4"
           >

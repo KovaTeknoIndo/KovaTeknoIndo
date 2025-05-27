@@ -13,14 +13,23 @@ const Aboutus = () => {
           alt="gambar-titik"
           className="absolute bottom-1 -left-20"
         />
-        <h3 className="text-center text-orangecustom text-xl tracking-widest">
+        <h3
+          data-aos="fade-down"
+          className="text-center text-orangecustom text-xl tracking-widest"
+        >
           TENTANG KAMI
         </h3>
-        <h4 className="text-center text-4xl lg:text-65xl pt-5 font-bold text-blueprimary">
+        <h4
+          data-aos="fade-down"
+          className="text-center text-4xl lg:text-65xl pt-5 font-bold text-blueprimary"
+        >
           Kenali lebih <br className="block sm:hidden" /> tentang kami.
         </h4>
         <div className="py-[30px] md:py-[60px]">
-          <p className="text-center text-[18px] md:text-[26px] font-medium text-[#454444]">
+          <p
+            data-aos="fade-down"
+            className="text-center text-[18px] md:text-[26px] font-medium text-[#454444]"
+          >
             Kami adalah agensi perangkat lunak yang berfokus pada pembuatan
             landing page modern, website, dan dashboard untuk membantu bisnis
             tampil lebih profesional di dunia digital. Didirikan oleh para
