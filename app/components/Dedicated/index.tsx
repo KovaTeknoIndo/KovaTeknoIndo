@@ -12,11 +12,11 @@ const Dedicated = () => {
             alt="spiral-design"
             className="absolute left-[-70px] md:left-[-150px]  -z-10 top-[-60px] md:top-[-180px] rotate-12 w-[200px] lg:w-[686px]"
           />
-          <h1 className="text-center text-[26px] md:text-[50px] font-bold text-blueprimary">
+          <h1 className="text-center text-[26px] md:text-[40px] lg:text-[50px] font-bold text-blueprimary">
             Common Barriers in <br /> the Digital World{" "}
           </h1>
           <div className="relative pt-[40px] md:pt-[80px] flex flex-col gap-10">
-            <p className="flex items-center gap-3 md:gap-10 justify-end text-end text-[18px] md:text-[35px] font-medium text-orangecustom">
+            <p className="flex items-center gap-3 md:gap-7 justify-end text-end text-[18px] md:text-[30px] font-medium text-orangecustom">
               <Image
                 src="/images/dedicated/failed.svg"
                 alt="fail"
@@ -27,7 +27,7 @@ const Dedicated = () => {
               The website looks outdated or <br />
               isn’t mobile responsive.
             </p>
-            <p className=" flex items-center gap-3 md:gap-10 justify-start text-start text-[18px] md:text-[35px] font-medium text-orangecustom">
+            <p className=" flex items-center gap-3 md:gap-7 justify-start text-start text-[18px] md:text-[30px] font-medium text-orangecustom">
               The design is unattractive and <br /> doesn’t reflect the brand
               identity.
               <Image
@@ -38,7 +38,7 @@ const Dedicated = () => {
                 className="w-[20px] h-[20px] md:w-[38px] md:h-[38px]"
               />
             </p>
-            <p className="flex items-center gap-3 md:gap-10 justify-end text-end text-[18px] md:text-[35px] font-medium text-orangecustom">
+            <p className="flex items-center gap-3 md:gap-7 justify-end text-end text-[18px] md:text-[30px] font-medium text-orangecustom">
               <Image
                 src="/images/dedicated/failed.svg"
                 alt="fail"
@@ -48,7 +48,7 @@ const Dedicated = () => {
               />
               Don’t know where to start.
             </p>
-            <p className=" flex items-center gap-3 md:gap-10 justify-start text-start text-[18px] md:text-[35px] font-medium text-orangecustom">
+            <p className=" flex items-center gap-3 md:gap-7 justify-start text-start text-[18px] md:text-[30px] font-medium text-orangecustom">
               Hard to be found online.
               <Image
                 src="/images/dedicated/failed.svg"
@@ -68,7 +68,7 @@ const Dedicated = () => {
           </div>
 
           <div className="relative pt-[40px] md:pt-[80px] flex flex-col gap-10">
-            <p className="flex items-center gap-3 md:gap-10 justify-end text-end text-[18px] md:text-[35px] font-medium text-solutiongreen">
+            <p className="flex items-center gap-3 md:gap-7 justify-end text-end text-[18px] md:text-[30px] font-medium text-solutiongreen">
               <Image
                 src="/images/dedicated/checklist.svg"
                 alt="fail"
@@ -78,7 +78,7 @@ const Dedicated = () => {
               />
               Modern & responsif design
             </p>
-            <p className=" flex items-center gap-3 md:gap-10 justify-start text-start text-[18px] md:text-[35px] font-medium text-solutiongreen">
+            <p className=" flex items-center gap-3 md:gap-7 justify-start text-start text-[18px] md:text-[30px] font-medium text-solutiongreen">
               Branding in accordance <br /> with identity
               <Image
                 src="/images/dedicated/checklist.svg"
@@ -88,7 +88,7 @@ const Dedicated = () => {
                 className="w-[20px] h-[20px] md:w-[38px] md:h-[38px]"
               />
             </p>
-            <p className="flex items-center gap-3 md:gap-10 justify-end text-end text-[18px] md:text-[35px] font-medium text-solutiongreen">
+            <p className="flex items-center gap-3 md:gap-7 justify-end text-end text-[18px] md:text-[30px] font-medium text-solutiongreen">
               <Image
                 src="/images/dedicated/checklist.svg"
                 alt="fail"
@@ -98,7 +98,7 @@ const Dedicated = () => {
               />
               Guide from scratch
             </p>
-            <p className=" flex items-center gap-3 md:gap-10 justify-start text-start text-[18px] md:text-[35px] font-medium text-solutiongreen">
+            <p className=" flex items-center gap-3 md:gap-7 justify-start text-start text-[18px] md:text-[30px] font-medium text-solutiongreen">
               Easy to find on Google
               <Image
                 src="/images/dedicated/checklist.svg"

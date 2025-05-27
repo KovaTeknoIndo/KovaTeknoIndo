@@ -6,7 +6,7 @@ import Image from "next/image";
 const names = [
   {
     heading: "Basic",
-    price: 750000,
+    price: 500000,
     user: "1-3 Pages, Responsive",
     button: "Order Now",
     profiles: "Domain + Hosting for 1 Year",
@@ -57,7 +57,7 @@ const Manage = () => {
 
   return (
     <div id="services-section">
-      <div className="mx-auto max-w-7xl sm:py-20 lg:px-8 my-16">
+      <div className="mx-auto max-w-7xl sm:py-20 lg:px-8 my-16 pt-20 md:pt-40">
         <h3 className="text-center text-4xl lg:text-65xl lg:leading-[90px] font-bold text-blueprimary">
           Manage All Your Website Projects <br />
           From One Place.

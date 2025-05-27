@@ -25,8 +25,8 @@ export default function Home() {
       {/* <Beliefs /> */}
       {/* <Wework /> */}
       <Manage />
-      {/* <FAQ /> */}
-      {/* <Testimonials /> */}
+      <FAQ />
+      <Testimonials />
       {/* <Articles /> */}
       {/* <Joinus /> */}
       {/* <Insta /> */}

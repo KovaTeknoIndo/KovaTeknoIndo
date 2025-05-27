@@ -8,7 +8,7 @@ const Digital = () => {
           <h3 className="text-xl font-normal text-white mb-5 tracking-widest text-center md:text-start">
             WHO WE ARE
           </h3>
-          <h4 className="text-center lg:text-start text-4xl lg:text-65xl font-bold text-white mb-8 lg:mb-11">
+          <h4 className="text-center md:text-start text-4xl lg:text-65xl font-bold text-white mb-8 lg:mb-11">
             We build modern, fast websites to grow your business.
           </h4>
           <div className=" text-center flex justify-start items-center md:text-start gap-5 flex-col md:flex-row lg:pb-20">

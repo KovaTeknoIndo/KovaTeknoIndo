@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const index = () => {
   return (
-    <div className="relative mx-auto max-w-7xl px-4 my-20 lg:pt-20 lg:pb-30 lg:px-8">
+    <div className="relative mx-auto max-w-7xl px-4 mt-20 lg:pt-20 lg:pb-0 lg:px-8">
       <h2 className="text-4xl text-blueprimary md:text-65xl font-bold text-center">
         Our team belives you deserve <br className="hidden lg:block" /> only the
         best.
@@ -11,7 +11,7 @@ const index = () => {
         We are committed to providing efficient, modern, and tailored <br />{" "}
         digital solutions.
       </h3>
-      <div className="grid grid-cols-1 py-9 md:my-16">
+      <div className="grid grid-cols-1 py-9 md:mt-16">
         <Image
           src="/images/team/teamimg.jpg"
           alt="office-image"
