@@ -17,7 +17,7 @@ const Aboutus = () => {
           ABOUT US
         </h3>
         <h4 className="text-center text-4xl lg:text-65xl font-bold text-blueprimary">
-          Know more about us.
+          Know more <br className="block sm:hidden" /> about us.
         </h4>
         <div className="py-[30px] md:py-[60px]">
           <p className="text-center text-[18px] md:text-[26px] font-medium text-[#454444]">
