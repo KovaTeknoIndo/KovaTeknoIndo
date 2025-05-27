@@ -1,35 +1,34 @@
 import Image from "next/image";
 
 const Digital = () => {
-    return (
-
-        <div className="mx-2">
-            <div className='mx-auto max-w-7xl px-4 my-40 pb-20 lg:pb-40 lg:px-8 bg-digital rounded-3xl bg-blue relative'>
-                <div className='grid grid-cols-1 lg:grid-cols-2 my-16'>
-
-                    {/* COLUMN-1 */}
-
-                    <div className="pt-24 lg:pl-24 ">
-                        <h3 className="text-lg font-normal text-white mb-5 tracking-widest text-center lg:text-start">WHO WE ARE</h3>
-                        <h4 className="text-4xl sm:text-6xl font-bold text-white mb-8 leading-snug text-center lg:text-start">We are a digital <br /> agency that builds <br /> amazing products.</h4>
-                        <div className="text-center lg:text-start">
-                            <button className="text-xl font-semibold text-white bg-btnblue py-4 px-12 hover:bg-hoblue rounded-full">Get started</button>
-                        </div>
-                    </div>
-
-                    {/* COLUMN-2 */}
-
-                    <div>
-                        <div className="lg:absolute girldoodle">
-                            <Image src="/images/digital/girldoodle.svg" alt="girldoodle" width={815} height={691} />
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
+  return (
+    <div className="bg-blueprimary bg-digital lg:bg-cover lg:bg-center">
+      <div className=" relative mx-auto max-w-7xl px-4 my-20 pb-[120px] lg:pb-30 lg:px-8 ">
+        <div className="pt-24 lg:pl-24 ">
+          <h3 className="text-xl font-normal text-white mb-5 tracking-widest text-center md:text-start">
+            WHO WE ARE
+          </h3>
+          <h4 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-snug text-center md:text-start">
+            We build modern, fast websites to grow your business.
+          </h4>
+          <div className=" text-center flex justify-start items-center md:text-start gap-5 flex-col md:flex-row lg:pb-20">
+            <a
+              href="#services-section"
+              className="text-xl font-semibold text-white bg-orangecustom py-4 px-6 md:px-12 w-full md:w-[auto] hover:bg-orangehover transition duration-300 rounded-full"
+            >
+              Get started
+            </a>
+            <a
+              href="#services-section"
+              className="text-xl font-semibold text-white border border-orangecustom w-full md:w-[auto] py-4 px-6 md:px-12 rounded-full  transition duration-300 hover:text-[#a2a2a2]"
+            >
+              Contact
+            </a>
+          </div>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
 export default Digital;

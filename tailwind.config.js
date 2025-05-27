@@ -44,6 +44,7 @@ module.exports = {
       blueprimary: "#002f66",
       bluehover: "#002f66",
       orangecustom: "#FF8402",
+      orangehover: "#d36900",
       solutiongreen: "#2E7D32",
     },
     fontSize: {
