@@ -36,10 +36,10 @@ const Banner = () => {
             <a
               href="https://wa.link/r7eklb"
               target="_blank"
-              className="py-2 md:py-5 px-[25px] md:px-[60px] border border-orangecustom font-semibold text-[16px] md:text-[23px] text-black rounded-full flex items-center gap-2 md:gap-4"
+              className="py-2 md:py-5 px-[25px] md:px-[60px] border border-orangecustom font-semibold text-[16px] md:text-[23px] text-orangecustom rounded-full flex items-center gap-2 md:gap-4"
             >
               <Image
-                src="/images/banner/whatsapp.svg"
+                src="/images/banner/whatsappicon.svg"
                 alt="whatsapp-icon"
                 width={33}
                 height={33}
