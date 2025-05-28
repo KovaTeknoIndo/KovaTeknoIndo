@@ -15,11 +15,11 @@ import Testimonials from "./components/Testimonials";
 
 export default function Home() {
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 1000, once: true });
   }, []);
 
   return (
-    <main className="overflow-x-hidden">
+    <main>
       <Banner />
       <Aboutus />
       <Dedicated />

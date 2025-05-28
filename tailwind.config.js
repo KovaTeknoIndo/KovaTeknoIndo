@@ -4,15 +4,13 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
-
-    // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     screens: {
       sm: "640px",
       md: "768px",
-      lg: "1150px", // change the value of lg to 1150px
+      lg: "1150px",
       xl: "1280px",
       "2xl": "1536px",
     },
@@ -64,7 +62,34 @@ module.exports = {
       "65xl": ["65px", { lineHeight: "1" }],
       "80xl": ["80px", { lineHeight: "6rem" }],
     },
-    extend: {},
+    // tailwind.config.js (extend bagian animation dan keyframes)
+    extend: {
+      animation: {
+        "fade-in-up": "fadeInUp 0.3s ease-out forwards",
+        "fade-out-down": "fadeOutDown 0.3s ease-in forwards",
+        "pulse-glow": "pulseGlow 2.5s ease-in-out infinite",
+      },
+      keyframes: {
+        fadeInUp: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeOutDown: {
+          "0%": { opacity: "1", transform: "translateY(0)" },
+          "100%": { opacity: "0", transform: "translateY(20px)" },
+        },
+        pulseGlow: {
+          "0%, 100%": {
+            transform: "scale(1)",
+            boxShadow: "0 0 8px rgba(38, 125, 255, 0.5)",
+          },
+          "50%": {
+            transform: "scale(1.05)",
+            boxShadow: "0 0 16px rgba(38, 125, 255, 0.9)",
+          },
+        },
+      },
+    },
   },
   plugins: [],
 };

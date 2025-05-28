@@ -2,6 +2,7 @@ import "./globals.css";
 import Script from "next/script";
 import Navbar from "./components/Navbar/index";
 import Footer from "./components/Footer/index";
+import Chat from "./components/Contact/Chat";
 
 export const metadata = {
   title: {
@@ -56,7 +57,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="relative overflow-x-hidden">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-505RVXTE04"
           strategy="afterInteractive"
@@ -76,6 +77,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Chat />
       </body>
     </html>
   );
