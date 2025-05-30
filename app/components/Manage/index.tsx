@@ -1,159 +1,136 @@
 "use client";
 import { useState } from "react";
-import { Switch } from "@headlessui/react";
-import Image from "next/image";
+import { Crown, Gem, Badge } from "lucide-react";
 
-const names = [
-  {
-    heading: "Basic",
-    price: 500000,
-    user: "1–3 Halaman, Responsif",
-    button: "Pesan Sekarang",
-    profiles: "Domain + Hosting 1 Tahun",
-    posts: "1x Revisi",
-    templates: "",
-    view: "",
-    support: "",
-    category: "monthly",
-  },
-  {
-    heading: "Standard",
-    price: 1500000,
-    user: "5 Halaman, Desain Kustom",
-    button: "Pesan Sekarang",
-    profiles: "Integrasi Kontak WhatsApp",
-    posts: "3x Revisi",
-    templates: "",
-    view: "",
-    support: "",
-    category: "monthly",
-  },
-  {
-    heading: "Premium",
-    price: 3000000,
-    user: "Halaman Tak Terbatas",
-    button: "Pesan Sekarang",
-    profiles: "Integrasi Pembayaran",
-    posts: "SEO Dasar",
-    templates: "Panel Admin Sederhana",
-    view: "Pemeliharaan 1 Bulan",
-    support: "",
-    category: "monthly",
-  },
-];
+import { plans, Plan } from "../../config/Manage";
+import { planStyles } from "../../config/style";
 
-const Manage = () => {
-  const [enabled, setEnabled] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("monthly");
+const Manage: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string>("monthly");
 
-  const toggleEnabled = () => {
-    setEnabled(!enabled);
-    setSelectedCategory(enabled ? "monthly" : "yearly");
-  };
-
-  const filteredData = names.filter(
-    (items) => items.category === selectedCategory
-  );
+  const filteredPlans: Plan[] = plans;
 
   return (
-    <section id="services-section">
-      <div className="mx-auto max-w-7xl sm:py-20 lg:px-8 my-16 pt-20 md:pt-40">
+    <section id="services-section" className="py-20 bg-gray-50">
+      <div className="container mx-auto max-w-7xl px-5">
         <h3
           data-aos="fade-down"
           className="text-center text-4xl lg:text-65xl lg:leading-[90px] font-bold text-blueprimary"
         >
-          Kelola Semua Proyek Website Anda <br />
+          Kelola Semua Proyek Website Anda <br className="hidden md:block" />
           Dalam Satu Tempat.
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16 mx-5 gap-8">
-          {filteredData.map((items, i) => (
-            <div
-              data-aos="fade-up"
-              key={i}
-              className={`manageTabs text-center p-10 border rounded-xl shadow-sm transition-transform duration-500 ease-in-out ${
-                items.heading === "Premium"
-                  ? "bg-blueprimary text-white"
-                  : items.heading === "Standard"
-                  ? "bg-white text-black border-gray-300"
-                  : "text-black border-gray-300"
-              } hover:scale-105`}
-            >
-              <h2
-                className={`text-xl font-bold mb-5 ${
-                  items.heading === "Premium"
-                    ? "text-orangecustom"
-                    : "text-darkgrey"
-                }`}
-              >
-                {items.heading}
-              </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pt-14">
+          {filteredPlans.map((plan, i) => {
+            const discountedPrice =
+              plan.originalPrice -
+              (plan.originalPrice * plan.discountPercentage) / 100;
 
-              <div className="mb-1 text-sm font-medium opacity-70">
-                Mulai dari
-              </div>
-              <div className="mb-3">
-                <span className="text-[40px] sm:text-5xl font-bold">
-                  Rp{items.price.toLocaleString("id-ID")}
-                </span>
-              </div>
+            const isPremium = plan.heading === "Premium";
+            const isStandard = plan.heading === "Standard";
+            const isBasic = plan.heading === "Basic";
 
-              <button
-                className={`text-sm font-bold rounded-full py-4 px-12 mb-6 sm:mt-6 transition-all duration-300 ${
-                  items.heading === "Premium"
-                    ? "bg-orangecustom hover:bg-orangehover text-white"
-                    : "text-blueprimary bg-transparent hover:bg-bluehover hover:text-white border-2 border-blueprimary"
-                }`}
+            return (
+              <div
+                key={i}
+                data-aos="fade-up"
+                className={`relative manageTabs text-center p-10 rounded-xl shadow-md transition-transform duration-300 ease-in-out
+                  ${
+                    isPremium
+                      ? planStyles.card.premium
+                      : isStandard
+                      ? planStyles.card.standard
+                      : planStyles.card.basic
+                  }
+                  hover:scale-105`}
               >
-                {items.button}
-              </button>
+                {/* Label diskon di pojok kanan atas */}
+                {plan.discountPercentage > 0 && (
+                  <div
+                    className={`absolute top-3 right-3 text-[13px] sm:text-[16px] font-bold px-3 py-1 rounded-full shadow-lg z-10 ${
+                      isPremium
+                        ? planStyles.discountLabel.premium
+                        : planStyles.discountLabel.default
+                    }`}
+                  >
+                    Hemat {plan.discountPercentage}%
+                  </div>
+                )}
 
-              <hr
-                className={`text-md font-medium mb-3 ${
-                  items.heading === "Premium" ? "text-white" : "text-darkgrey"
-                }`}
-              />
-              <h3
-                className={`text-md font-medium mb-3 mt-6 ${
-                  items.heading === "Premium" ? "text-white" : "text-darkgrey"
-                }`}
-              >
-                {items.user}
-              </h3>
-              <h3
-                className={`text-md font-medium mb-3 ${
-                  items.heading === "Premium" ? "text-white" : "text-darkgrey"
-                }`}
-              >
-                {items.profiles}
-              </h3>
-              <h3
-                className={`text-md font-medium mb-3 ${
-                  items.heading === "Premium" ? "text-white" : "text-darkgrey"
-                }`}
-              >
-                {items.posts}
-              </h3>
-              {items.templates && (
-                <h3
-                  className={`text-md font-medium mb-3 ${
-                    items.heading === "Premium" ? "text-white" : "text-darkgrey"
+                <h2
+                  className={`flex items-center justify-center gap-2 text-2xl font-extrabold mb-6 ${
+                    isPremium
+                      ? planStyles.heading.premium
+                      : isStandard
+                      ? planStyles.heading.standard
+                      : planStyles.heading.default
                   }`}
                 >
-                  {items.templates}
-                </h3>
-              )}
-              {items.view && (
-                <h3
-                  className={`text-md font-medium ${
-                    items.heading === "Premium" ? "text-white" : "text-darkgrey"
+                  {isPremium && <Crown className="w-6 h-6 text-yellow-400" />}
+                  {isStandard && <Gem className="w-6 h-6 text-blue-500" />}
+                  {isBasic && <Badge className="w-6 h-6 text-gray-500" />}
+                  {plan.heading}
+                </h2>
+
+                <div className="mb-1 text-sm font-semibold opacity-70">
+                  Mulai dari
+                </div>
+
+                <div className="mb-6">
+                  {plan.discountPercentage > 0 ? (
+                    <>
+                      <span className="block text-lg line-through opacity-60 mb-1">
+                        Rp{plan.originalPrice.toLocaleString("id-ID")}
+                      </span>
+                      <span className="text-4xl font-bold text-red-500">
+                        Rp{discountedPrice.toLocaleString("id-ID")}
+                      </span>
+                    </>
+                  ) : (
+                    <span className="text-4xl font-bold">
+                      Rp{plan.originalPrice.toLocaleString("id-ID")}
+                    </span>
+                  )}
+                </div>
+
+                <a
+                  href={plan.href}
+                  target="_blank"
+                  className={`inline-block text-sm font-bold rounded-full py-3 px-12 mb-8 sm:mt-0 transition-all duration-300 ${
+                    isPremium
+                      ? planStyles.button.premium
+                      : isStandard
+                      ? planStyles.button.standard
+                      : planStyles.button.default
                   }`}
                 >
-                  {items.view}
-                </h3>
-              )}
-            </div>
-          ))}
+                  {plan.button}
+                </a>
+
+                <hr
+                  className={`border ${
+                    isPremium ? planStyles.hr.premium : planStyles.hr.default
+                  } mb-8`}
+                />
+
+                <div
+                  className={`space-y-3 ${
+                    isPremium
+                      ? planStyles.textColor.premium
+                      : planStyles.textColor.default
+                  }`}
+                >
+                  <p>{plan.benefit1}</p>
+                  <p>{plan.benefit2}</p>
+                  <p>{plan.benefit3}</p>
+                  {plan.benefit4 && <p>{plan.benefit4}</p>}
+                  {plan.benefit5 && <p>{plan.benefit5}</p>}
+                  {plan.benefit6 && <p>{plan.benefit6}</p>}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

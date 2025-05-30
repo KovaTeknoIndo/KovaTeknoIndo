@@ -42,6 +42,7 @@ module.exports = {
       blueprimary: "#002f66",
       bluehover: "#002f66",
       orangecustom: "#FF8402",
+      bluecustom: "#3cc1f0",
       orangehover: "#d36900",
       solutiongreen: "#2E7D32",
     },
