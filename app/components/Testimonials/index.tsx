@@ -15,46 +15,46 @@ interface DataType {
 
 const postData: DataType[] = [
   {
-    name: "Robert Fox",
-    profession: "CEO, Parkview Int. Ltd",
+    name: "Rizky Pratama",
+    profession: "CEO",
     comment:
       "Tim mereka sangat profesional dan responsif. Proyek kami diselesaikan tepat waktu dengan kualitas yang melebihi ekspektasi. Sangat direkomendasikan!",
-    imgSrc: "/images/testimonial/user1.svg",
+    imgSrc: "/images/testimonial/avatar.png",
   },
   {
-    name: "Leslie Alexander",
-    profession: "Founder, Digital Bloom",
+    name: "Siti Lestari",
+    profession: "Pendiri Startup Digital",
     comment:
       "Saya sangat puas dengan hasil kerjanya. Komunikasi lancar dan desain web yang dibuat sangat modern serta mobile-friendly.",
-    imgSrc: "/images/testimonial/user2.svg",
+    imgSrc: "/images/testimonial/avatar.png",
   },
   {
-    name: "Cody Fisher",
-    profession: "Marketing Director, NeoTech",
+    name: "Andi Nugroho",
+    profession: "Direktur Pemasaran",
     comment:
       "Kami bekerja sama dalam pembuatan dashboard internal. Mereka sangat memahami kebutuhan bisnis dan memberikan solusi yang efisien.",
-    imgSrc: "/images/testimonial/user3.svg",
+    imgSrc: "/images/testimonial/avatar.png",
   },
   {
-    name: "Eleanor Pena",
-    profession: "Owner, Pena Studio",
+    name: "Fitri Azzahra",
+    profession: "Pemilik Studio Kreatif",
     comment:
       "Sangat senang bekerja dengan tim ini! Mereka fleksibel, cepat, dan penuh ide kreatif. Akan kembali untuk proyek selanjutnya.",
-    imgSrc: "/images/testimonial/user2.svg",
+    imgSrc: "/images/testimonial/avatar.png",
   },
   {
-    name: "Wade Warren",
-    profession: "COO, Bright Solutions",
+    name: "Budi Santoso",
+    profession: "COO",
     comment:
       "Salah satu pengalaman kerja remote terbaik yang pernah saya alami. Mereka menjaga kualitas dan selalu terbuka untuk feedback.",
-    imgSrc: "/images/testimonial/user3.svg",
+    imgSrc: "/images/testimonial/avatar.png",
   },
   {
-    name: "Jenny Wilson",
-    profession: "UI/UX Consultant",
+    name: "Nadia Ayu",
+    profession: "Konsultan UI/UX",
     comment:
       "Desain UI yang diberikan sangat rapi dan sesuai prinsip UX. Mereka sangat detail dan terbuka untuk revisi.",
-    imgSrc: "/images/testimonial/user1.svg",
+    imgSrc: "/images/testimonial/avatar.png",
   },
 ];
 
