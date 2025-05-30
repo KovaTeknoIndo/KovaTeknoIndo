@@ -12,7 +12,7 @@ const Banner = () => {
         <div className="mx-auto sm:mx-0 md:pt-[26px]">
           <div className="py-3 text-start">
             <span className="text-blueprimary bg-[#ff850239] py-2 md:py-3 px-5 md:px-6 text-[15px] md:text-[24px] font-bold rounded-full tracking-wider">
-              Agensi Software
+              Software Agency
             </span>
           </div>
           <div className="py-2">
