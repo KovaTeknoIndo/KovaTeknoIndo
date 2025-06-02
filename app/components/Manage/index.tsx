@@ -12,7 +12,7 @@ const Manage: React.FC = () => {
 
   return (
     <section id="services-section" className="py-20 bg-gray-50">
-      <div className="container mx-auto max-w-7xl px-5">
+      <div className="container px-5 mx-auto max-w-7xl">
         <h3
           data-aos="fade-down"
           className="text-center text-4xl lg:text-65xl lg:leading-[90px] font-bold text-blueprimary"
@@ -21,7 +21,7 @@ const Manage: React.FC = () => {
           Dalam Satu Tempat.
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pt-14">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 pt-14">
           {filteredPlans.map((plan, i) => {
             const discountedPrice =
               plan.originalPrice -
@@ -80,7 +80,7 @@ const Manage: React.FC = () => {
                 <div className="mb-6">
                   {plan.discountPercentage > 0 ? (
                     <>
-                      <span className="block text-lg line-through opacity-60 mb-1">
+                      <span className="block mb-1 text-lg line-through opacity-60">
                         Rp{plan.originalPrice.toLocaleString("id-ID")}
                       </span>
                       <span className="text-4xl font-bold text-red-500">
@@ -121,12 +121,9 @@ const Manage: React.FC = () => {
                       : planStyles.textColor.default
                   }`}
                 >
-                  <p>{plan.benefit1}</p>
-                  <p>{plan.benefit2}</p>
-                  <p>{plan.benefit3}</p>
-                  {plan.benefit4 && <p>{plan.benefit4}</p>}
-                  {plan.benefit5 && <p>{plan.benefit5}</p>}
-                  {plan.benefit6 && <p>{plan.benefit6}</p>}
+                  {plan.benefit.map((ben, index) => (
+                    <p key={index}>{ben}</p>
+                  ))}
                 </div>
               </div>
             );
