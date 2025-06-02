@@ -10,6 +10,10 @@ export interface Plan {
   benefit4?: string;
   benefit5?: string;
   benefit6?: string;
+  benefit7?: string;
+  benefit8?: string;
+  benefit9?: string;
+  benefit10?: string;
 }
 
 export const plans: Plan[] = [
