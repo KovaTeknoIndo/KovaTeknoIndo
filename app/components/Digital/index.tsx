@@ -18,16 +18,17 @@ const Digital = () => {
             Kami membangun website modern dan cepat untuk mengembangkan
             bisnismu.
           </h4>
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-5">
+          <div
+            data-aos="fade-right"
+            className="flex flex-col md:flex-row items-center md:items-start gap-5"
+          >
             <a
-              data-aos="fade-right"
               href="#services-section"
               className="w-full md:w-auto text-white text-lg md:text-xl font-semibold bg-orangecustom hover:bg-orangehover transition duration-300 py-3 md:py-4 px-6 md:px-12 rounded-full text-center"
             >
               Mulai Sekarang
             </a>
             <a
-              data-aos="fade-right"
               href="https://wa.link/r7eklb"
               target="_blank"
               rel="noopener noreferrer"

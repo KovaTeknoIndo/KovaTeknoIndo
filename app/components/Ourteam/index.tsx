@@ -2,14 +2,18 @@ import Image from "next/image";
 
 const Index = () => {
   return (
-    <section className="relative mx-auto max-w-7xl px-4 mt-20 lg:pt-20 lg:pb-0 lg:px-8">
-      <h2
+    <section className="relative mx-auto max-w-7xl px-4 mt-20 lg:pt-20 lg:pb-24 lg:px-8">
+      {/* <h2
         data-aos="fade-down"
-        className="text-center text-4xl lg:text-65xl lg:leading-[90px] font-bold text-blueprimary"
+        className="text-center text-4xl lg:text-65xl  font-bold text-blueprimary"
+      ></h2> */}
+      <h4
+        data-aos="fade-down"
+        className="text-center text-4xl lg:text-65xl lg:leading-[80px] pt-5 font-bold text-blueprimary"
       >
         Tim kami percaya kamu pantas <br className="hidden lg:block" />{" "}
         mendapatkan yang terbaik.
-      </h2>
+      </h4>
       <h3
         data-aos="fade-down"
         className="text-[16px] md:text-2xl font-medium text-center pt-4 md:pt-10 opacity-50"

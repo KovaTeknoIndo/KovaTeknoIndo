@@ -40,7 +40,7 @@ module.exports = {
       footer: "rgba(226, 223, 223, 0.75)",
       linegrey: "#C4C4C4",
       blueprimary: "#002f66",
-      bluehover: "#002f66",
+      bluehover: "#081a2f",
       orangecustom: "#FF8402",
       bluecustom: "#3cc1f0",
       orangehover: "#d36900",

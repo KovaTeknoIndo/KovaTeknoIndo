@@ -25,10 +25,10 @@ const Aboutus = () => {
         >
           Kenali lebih <br className="block sm:hidden" /> tentang kami.
         </h4>
-        <div className="py-[30px] md:py-[60px]">
+        <div className="py-[30px] lg:py-[60px]">
           <p
             data-aos="fade-down"
-            className="text-center text-[18px] md:text-[26px] font-medium text-[#454444]"
+            className="text-center text-[18px] lg:text-[26px] font-medium text-[#454444]"
           >
             Kami adalah agensi perangkat lunak yang berfokus pada pembuatan
             landing page modern, website, dan dashboard untuk membantu bisnis
