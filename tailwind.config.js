@@ -45,6 +45,7 @@ module.exports = {
       bluecustom: "#3cc1f0",
       orangehover: "#d36900",
       solutiongreen: "#2E7D32",
+      red: "#ef4444",
     },
     fontSize: {
       xs: ["0.75rem", { lineHeight: "1rem" }],

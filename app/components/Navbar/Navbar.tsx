@@ -13,11 +13,11 @@ interface NavigationItem {
 }
 
 const navigation: NavigationItem[] = [
-  { name: "Tentang", href: "#aboutus-section", current: false },
-  { name: "Layanan", href: "#services-section", current: false },
-  { name: "FAQ", href: "#faq-section", current: false },
-  // { name: "Blog", href: "#blog-section", current: false },
-  { name: "Testimoni", href: "#testimonial-section", current: false },
+  { name: "Beranda", href: "/", current: false },
+  // { name: "Layanan", href: "#services-section", current: false },
+  { name: "Layanan", href: "/layanan", current: false },
+  // { name: "FAQ", href: "#faq-section", current: false },
+  // { name: "Testimoni", href: "#testimonial-section", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -77,27 +77,29 @@ const Navbar = () => {
                 </Link>
               </div>
 
-              {/* LINKS */}
-              <div className="hidden lg:flex items-center">
-                <div className="flex justify-end space-x-4">
-                  {navigation.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className={classNames(
-                        item.current
-                          ? "bg-gray-700"
-                          : "navlinks hover:text-black transition ease-in-out duration-300",
-                        "px-3 py-4 rounded-md text-[20px] font-normal"
-                      )}
-                      aria-current={item.href ? "page" : undefined}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
+              <div className="flex items-center">
+                {/* LINKS */}
+                <div className="hidden lg:flex items-center">
+                  <div className="flex justify-end space-x-4">
+                    {navigation.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className={classNames(
+                          item.current
+                            ? "bg-gray-700"
+                            : "navlinks hover:text-black transition ease-in-out duration-300",
+                          "px-3 py-4 rounded-md text-[20px] font-normal"
+                        )}
+                        aria-current={item.href ? "page" : undefined}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
+                <Contactusform />
               </div>
-              <Contactusform />
             </div>
 
             {/* DRAWER BUTTON (MOBILE) */}
@@ -191,7 +193,7 @@ const DrawerData = () => {
             <a
               href="https://wa.link/r7eklb"
               target="_blank"
-              className="mt-2 text-center bg-blueprimary w-full hover:text-white text-white border border-purple font-medium py-2 px-4 rounded "
+              className="mt-2 text-center bg-blueprimary w-full hover:text-white text-white border border-purple font-medium py-2 px-4 rounded-full"
             >
               Kontak Kami
             </a>

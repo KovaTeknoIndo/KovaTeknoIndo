@@ -1,8 +1,9 @@
 import "./globals.css";
 import Script from "next/script";
-import Navbar from "./components/Navbar/index";
-import Footer from "./components/Footer/index";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Chat from "./components/Contact/Chat";
+import ModalProvider from "./components/Contact/ModalProvider"; // 👈 Client component
 
 export const metadata = {
   title: {
@@ -28,14 +29,6 @@ export const metadata = {
       },
     ],
   },
-  // Jika ingin menambahkan Twitter Card:
-  // twitter: {
-  //   card: "summary_large_image",
-  //   title: "Kova Teknoindo | Software Agency in Kediri",
-  //   description: "Solusi pembuatan website profesional untuk bisnis Anda.",
-  //   creator: "@kova_teknoindo",
-  //   images: ["https://www.kovatekno.my.id/og-image.svg"],
-  // },
   keywords: [
     "jasa website",
     "buat website murah",
@@ -44,10 +37,14 @@ export const metadata = {
     "software agency Kediri",
   ],
   authors: [{ name: "Kova Teknoindo" }],
-  viewport: "width=device-width, initial-scale=1.0",
   other: {
     "x-ua-compatible": "IE=edge",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1.0,
 };
 
 export default function RootLayout({
@@ -78,6 +75,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <Chat />
+        <ModalProvider /> {/* 👈 Tambah ini */}
       </body>
     </html>
   );

@@ -1,11 +1,12 @@
 "use client";
+
 import { useState } from "react";
 import { Crown, Gem, Badge } from "lucide-react";
 
-import { plans, Plan } from "../../config/Manage";
-import { planStyles } from "../../config/style";
+import { plans, Plan } from "../../../../config/Manage"; // Bisa kamu buat file baru jika isi plan beda
+import { planStyles } from "../../../../config/style";
 
-const Manage: React.FC = () => {
+const Pricing: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("monthly");
 
   const filteredPlans: Plan[] = plans;
@@ -13,15 +14,7 @@ const Manage: React.FC = () => {
   return (
     <section id="services-section" className="py-20 lg:pb-44 bg-gray-50">
       <div className="container px-5 mx-auto max-w-7xl">
-        <h3
-          data-aos="fade-down"
-          className="text-center text-4xl lg:text-65xl lg:leading-[80px] pt-5 font-bold text-blueprimary"
-        >
-          Kelola Semua Proyek Website Anda <br className="hidden md:block" />
-          Dalam Satu Tempat.
-        </h3>
-
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 pt-14 lg:pt-20">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 pt-14 lg:pt-28">
           {filteredPlans.map((plan, i) => {
             const discountedPrice =
               plan.originalPrice -
@@ -44,7 +37,6 @@ const Manage: React.FC = () => {
                   }
                   hover:scale-105`}
                 >
-                  {/* Label Diskon */}
                   {plan.discountPercentage > 0 && (
                     <div
                       className={`absolute top-3 right-3 text-sm sm:text-base font-bold px-3 py-1 rounded-full shadow-lg z-10 ${
@@ -57,7 +49,6 @@ const Manage: React.FC = () => {
                     </div>
                   )}
 
-                  {/* Heading & Icon */}
                   <h2
                     className={`flex items-center justify-center gap-2 text-2xl font-extrabold mb-6 ${
                       isPremium
@@ -73,7 +64,6 @@ const Manage: React.FC = () => {
                     {plan.heading}
                   </h2>
 
-                  {/* Harga */}
                   <div className="mb-1 text-sm font-semibold opacity-70">
                     Mulai dari
                   </div>
@@ -94,7 +84,6 @@ const Manage: React.FC = () => {
                     )}
                   </div>
 
-                  {/* Tombol CTA */}
                   <a
                     href={plan.href}
                     target="_blank"
@@ -109,14 +98,12 @@ const Manage: React.FC = () => {
                     {plan.button}
                   </a>
 
-                  {/* Garis Batas */}
                   <hr
                     className={`border ${
                       isPremium ? planStyles.hr.premium : planStyles.hr.default
                     } mb-8`}
                   />
 
-                  {/* Benefit */}
                   <div
                     className={`space-y-3 ${
                       isPremium
@@ -138,4 +125,4 @@ const Manage: React.FC = () => {
   );
 };
 
-export default Manage;
+export default Pricing;

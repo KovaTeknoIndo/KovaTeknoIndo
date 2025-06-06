@@ -1,9 +1,10 @@
+
 export interface Plan {
   heading: string;
   originalPrice: number;
   discountPercentage: number;
   button: string;
-  href: string; //
+  href: string;
   benefit: string[];
 }
 
@@ -17,8 +18,8 @@ export const plans: Plan[] = [
     benefit: [
       "1-3 Halaman, Responsif",
       "Domain .my.id + Hosting 1 Tahun",
-      "1x Revisi"
-    ]
+      "1x Revisi",
+    ],
   },
   {
     heading: "Standard",
@@ -34,7 +35,7 @@ export const plans: Plan[] = [
       "Integrasi Gmaps",
       "Domain .com + Hosting 1 Tahun",
       "3x Revisi",
-    ]
+    ],
   },
   {
     heading: "Premium",
@@ -51,6 +52,7 @@ export const plans: Plan[] = [
       "Email domain",
       "Training Admin Panel",
       "Domain .com + Hosting 1 Tahun",
-    ]
+    ],
   },
 ];
+
