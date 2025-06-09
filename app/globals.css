@@ -46,6 +46,16 @@ html {
   scroll-behavior: smooth !important;
 }
 
+/* styles/globals.css atau tailwind.config.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
 .navbar {
   border-bottom: 0.5px solid rgba(196, 196, 196, 0.75);
 }

@@ -53,7 +53,7 @@ const FAQ = () => {
           >
             <Disclosure>
               {({ open }) => (
-                <>
+                <div>
                   <Disclosure.Button className="flex w-full justify-between items-center rounded-lg px-2 py-2 text-left text-[18px] md:text-2xl font-medium focus:outline-none">
                     <span>{item.question}</span>
                     <ChevronUpIcon
@@ -79,7 +79,7 @@ const FAQ = () => {
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </>
+                </div>
               )}
             </Disclosure>
           </div>

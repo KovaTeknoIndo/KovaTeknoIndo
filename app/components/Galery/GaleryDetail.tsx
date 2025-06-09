@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 interface PortfolioDetailProps {
   title: string;
@@ -32,8 +32,11 @@ export default function GaleryDetail({
   }, []);
 
   return (
-    <section id="portfolio-details" className="py-20 mt-20 bg-gray-50">
-      <div className="container px-4 mx-auto" data-aos="fade-up" data-aos-delay="100">
+    <section
+      id="portfolio-details"
+      className="relative mx-auto max-w-7xl px-4 lg:px-10 mt-40 pb-[120px]"
+    >
+      <div className="" data-aos="fade-up" data-aos-delay="100">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
           {/* Swiper Slider */}
           <div className="lg:col-span-2">
@@ -60,24 +63,47 @@ export default function GaleryDetail({
 
           {/* Info & Description */}
           <div className="space-y-6">
-            <div className="p-6 bg-white rounded shadow" data-aos="fade-up" data-aos-delay="200">
-              <h3 className="mb-4 text-xl font-bold uppercase">Project Information</h3>
+            <div
+              className="p-6 bg-white rounded shadow"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <h3 className="mb-4 text-xl font-bold uppercase">
+                Project Information
+              </h3>
               <ul className="space-y-1 text-sm text-gray-700">
-                <li><strong>Category</strong>: {category.toUpperCase()}</li>
-                <li><strong>Client</strong>: {client.toUpperCase()}</li>
-                <li><strong>Project Date</strong>: {date}</li>
                 <li>
-                  <strong>Project URL</strong>:{' '}
-                  <a href={url} target="_blank" rel="noreferrer" className="text-blue-600 underline break-words">
+                  <strong>Category</strong>: {category.toUpperCase()}
+                </li>
+                <li>
+                  <strong>Client</strong>: {client.toUpperCase()}
+                </li>
+                <li>
+                  <strong>Project Date</strong>: {date}
+                </li>
+                <li>
+                  <strong>Project URL</strong>:{" "}
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-blue-600 underline break-words"
+                  >
                     {url}
                   </a>
                 </li>
               </ul>
             </div>
 
-            <div className="p-6 bg-white rounded shadow" data-aos="fade-up" data-aos-delay="300">
+            <div
+              className="p-6 bg-white rounded shadow"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               <h2 className="mb-2 text-lg font-bold uppercase">{title}</h2>
-              <p className="text-sm leading-relaxed text-gray-600">{description}</p>
+              <p className="text-sm leading-relaxed text-gray-600">
+                {description}
+              </p>
             </div>
           </div>
         </div>
