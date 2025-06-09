@@ -12,6 +12,7 @@ html,
 body {
   overflow-x: hidden;
 }
+
 body {
   margin: 0;
   font-family: "Urbanist", sans-serif;
@@ -30,7 +31,7 @@ html:not([data-scroll="0"]) .navbar {
   z-index: 3;
 }
 
-html:not([data-scroll="0"]) .navbar > div > div {
+html:not([data-scroll="0"]) .navbar>div>div {
   height: 3rem;
 }
 
@@ -226,8 +227,7 @@ html {
 }
 
 .star {
-  filter: invert(79%) sepia(53%) saturate(1095%) hue-rotate(330deg)
-    brightness(101%) contrast(96%);
+  filter: invert(79%) sepia(53%) saturate(1095%) hue-rotate(330deg) brightness(101%) contrast(96%);
 }
 
 .article-img {
@@ -382,19 +382,27 @@ html {
   opacity: 1;
 }
 
-.imageContainer:hover > a > button {
+.imageContainer:hover>a>button {
   display: block;
 }
 
-.manage > div:nth-child(2) {
+.manage>div:nth-child(2) {
   background-color: #00224a !important;
   color: #ffffff;
 }
 
-.manage > div:nth-child(2) button {
+.manage>div:nth-child(2) button {
   color: #ffffff;
 }
 
-.manage > div:nth-child(2) h3 {
+.manage>div:nth-child(2) h3 {
   color: #747474;
+}
+
+.bg-bluecustom {
+  background-color: #3cc1f0;
+}
+
+.bg-greencustom {
+  background-color: #2E7D32;
 }

@@ -5,8 +5,14 @@ import { Crown, Gem, Badge } from "lucide-react";
 
 import { plans, Plan } from "../../../../config/Manage"; // Bisa kamu buat file baru jika isi plan beda
 import { planStyles } from "../../../../config/style";
-
-const Pricing: React.FC = () => {
+type PricingProps = {
+  showTitle?: boolean;
+  titleText?: string;
+};
+const Pricing: React.FC<PricingProps> = ({
+  showTitle = false,
+  titleText = "Pilih Paket Layanan"
+}) => {
   const [selectedCategory, setSelectedCategory] = useState<string>("monthly");
 
   const filteredPlans: Plan[] = plans;
@@ -14,6 +20,12 @@ const Pricing: React.FC = () => {
   return (
     <section id="services-section" className="py-20 lg:pb-44 bg-gray-50">
       <div className="container px-5 mx-auto max-w-7xl">
+      {showTitle && (
+          <h3 data-aos="fade-down"
+          className="text-center text-4xl lg:text-65xl lg:leading-[80px] pt-5 font-bold text-blueprimary">
+            {titleText}
+          </h3>
+        )}
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 pt-14 lg:pt-28">
           {filteredPlans.map((plan, i) => {
             const discountedPrice =
@@ -58,8 +70,8 @@ const Pricing: React.FC = () => {
                         : planStyles.heading.default
                     }`}
                   >
-                    {isPremium && <Crown className="w-6 h-6 text-yellow-400" />}
-                    {isStandard && <Gem className="w-6 h-6 text-blue-500" />}
+                    {isPremium && <Crown className="w-6 h-6 " />}
+                    {isStandard && <Gem className="w-6 h-6" />}
                     {isBasic && <Badge className="w-6 h-6 text-gray-500" />}
                     {plan.heading}
                   </h2>
@@ -73,7 +85,7 @@ const Pricing: React.FC = () => {
                         <span className="block mb-1 text-lg line-through opacity-60">
                           Rp{plan.originalPrice.toLocaleString("id-ID")}
                         </span>
-                        <span className="text-4xl font-bold text-red-500">
+                        <span className="text-4xl font-bold text-grey-500">
                           Rp{discountedPrice.toLocaleString("id-ID")}
                         </span>
                       </>

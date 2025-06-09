@@ -20,6 +20,9 @@ export const metadata = {
     locale: "id_ID",
     url: "https://www.kovatekno.my.id",
     siteName: "Kova Teknoindo",
+    icons: {
+      icon: '/favicon.ico',
+    },
     images: [
       {
         url: "https://www.kovatekno.my.id/og-image.svg",
@@ -30,6 +33,7 @@ export const metadata = {
     ],
   },
   keywords: [
+    "jasa website kediri",
     "jasa website",
     "buat website murah",
     "web developer UMKM",
@@ -75,7 +79,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <Chat />
-        <ModalProvider /> {/* 👈 Tambah ini */}
+        <ModalProvider />
       </body>
     </html>
   );

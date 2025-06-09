@@ -11,9 +11,9 @@ export const planStyles = {
   },
   button: {
     premium: "bg-orangecustom hover:bg-orangehover text-white",
-    standard: "bg-white hover:bg-blueprimary text-black hover:text-white",
+    standard: "bg-white hover:bg-bluehover text-black hover:text-white",
     default:
-      "border-2 border-blue-700 text-blue-700 hover:bg-blueprimary hover:text-white",
+      "bg-blueprimary text-white hover:bg-bluehover hover:text-white",
   },
   hr: {
     premium: "border-white",
@@ -25,6 +25,6 @@ export const planStyles = {
   },
   discountLabel: {
     premium: "bg-orangecustom text-white",
-    default: "bg-solutiongreen text-white",
+    default: "bg-greencustom text-white",
   },
 };

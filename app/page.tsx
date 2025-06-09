@@ -12,6 +12,7 @@ import Ourteam from "./components/Home/Ourteam";
 import Manage from "./components/Home/Manage";
 import FAQ from "./components/Home/FAQ";
 import Testimonials from "./components/Home/Testimonials";
+import Pricing from "./components/Layanan/Pricing/pricing";
 
 export default function Home() {
 
@@ -26,7 +27,8 @@ export default function Home() {
       <Dedicated />
       <Digital />
       <Ourteam />
-      <Manage />
+      {/* <Manage /> */}
+      <Pricing showTitle titleText="Kelola Semua Proyek Website Anda Dalam Satu Tempat." />
       <FAQ />
       <Testimonials />
     </main>

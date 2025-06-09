@@ -3,7 +3,7 @@ const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig = {
   // basePath: isProd ? "" : "",
-  // assetPrefix: isProd ? "/Desgy/" : "",
+  // assetPrefix: isProd ? "/" : "",
   output: "export",
   images: {
     unoptimized: true,
