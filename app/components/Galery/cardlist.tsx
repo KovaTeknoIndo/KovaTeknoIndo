@@ -1,8 +1,13 @@
 "use client"
 import Image from "next/image";
+import GLightbox from "glightbox";
+import 'glightbox/dist/css/glightbox.min.css';
 import { useEffect, useState } from "react";
 import { Search, Link as LinkIcon } from "lucide-react";
 import clsx from "clsx";
+import Link from "next/link";
+import {PortfolioCategory,portfolioItems} from "@/config/Galery"
+
 const categories = [
     { label: "All", value: "*" },
     { label: "App", value: "app" },
@@ -10,71 +15,16 @@ const categories = [
     { label: "Branding", value: "branding" },
     { label: "Books", value: "books" },
 ];
-  
-const portfolioItems = [
-  {
-    category: "app",
-    title: "App 1",
-    image: "/assets/img/portfolio/app-1.jpg",
-  },
-  {
-    category: "product",
-    title: "Product 1",
-    image: "/assets/img/portfolio/product-1.jpg",
-  },
-  {
-    category: "branding",
-    title: "Branding 1",
-    image: "/assets/img/portfolio/branding-1.jpg",
-  },
-  {
-    category: "books",
-    title: "Books 1",
-    image: "/assets/img/portfolio/books-1.jpg",
-  },
-  {
-    category: "app",
-    title: "App 2",
-    image: "/assets/img/portfolio/app-2.jpg",
-  },
-  {
-    category: "product",
-    title: "Product 2",
-    image: "/assets/img/portfolio/product-2.jpg",
-  },
-  {
-    category: "branding",
-    title: "Branding 2",
-    image: "/assets/img/portfolio/branding-2.jpg",
-  },
-  {
-    category: "books",
-    title: "Books 2",
-    image: "/assets/img/portfolio/books-2.jpg",
-  },
-  {
-    category: "app",
-    title: "App 3",
-    image: "/assets/img/portfolio/app-3.jpg",
-  },
-  {
-    category: "product",
-    title: "Product 3",
-    image: "/assets/img/portfolio/product-3.jpg",
-  },
-  {
-    category: "branding",
-    title: "Branding 3",
-    image: "/assets/img/portfolio/branding-3.jpg",
-  },
-  {
-    category: "books",
-    title: "Books 3",
-    image: "/assets/img/portfolio/books-3.jpg",
-  },
-];
 
 const PortfolioSection: React.FC = () => {
+    useEffect(() => {
+      const lightbox = GLightbox({
+        selector: ".glightbox",
+      });
+      return () => {
+        lightbox.destroy();
+      };
+    }, []);
     const [activeFilter, setActiveFilter] = useState("*");
     const filteredItems =
         activeFilter === "*"
@@ -105,11 +55,11 @@ const PortfolioSection: React.FC = () => {
                 <div
                 key={index}
                 data-aos="fade-up"
-                className="relative overflow-hidden transition duration-300 bg-white rounded-lg shadow-lg group"
+                className="relative w-full overflow-hidden transition duration-300 bg-white rounded-lg shadow-lg group"
                 >
                 {/* Image with zoom on hover */}
                 <Image
-                    src={item.image}
+                    src={item.images[0]}
                     alt={item.title}
                     width={500}
                     height={300}
@@ -127,19 +77,26 @@ const PortfolioSection: React.FC = () => {
                     Lorem ipsum, dolor sit amet consectetur
                     </p>
                     <div className="flex space-x-4">
-                    <a href={item.image}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="transition hover:text-blue-400"
+                    <a
+                      href={item.images[0]}
+                      className="glightbox"
+                      data-gallery={`portfolio-${index}`}
+                      // title={item.title}
                     >
-                        <Search className="w-6 h-6" />
+                      <Search className="w-5 h-5" />
                     </a>
-                    <a href="/portfolio-details"
-                        className="transition hover:text-blue-400"
-                    >
-                        <LinkIcon className="w-6 h-6" />
-                    </a>
+                    <Link href={`/galery/${item.slug}/detail`}  className="transition hover:text-blue-400">
+                      <LinkIcon className="w-6 h-6" />
+                    </Link>
                     </div>
+                    {/* Hidden images untuk galeri lightbox */}
+                    {item.images.slice(1).map((img, i) => (
+                      <a key={i}
+                        href={img}
+                        className="hidden glightbox"
+                        data-gallery={`portfolio-${index}`}
+                      ></a>
+                    ))}
                 </div>
                 </div>
             ))}

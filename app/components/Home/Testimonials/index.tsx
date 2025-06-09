@@ -1,8 +1,12 @@
 "use client";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import React, { Component } from "react";
 import { StarIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 // CAROUSEL DATA
 
@@ -106,52 +110,52 @@ export default class MultipleItems extends Component {
 
     return (
       <section
-        className=" pt-10 md:pt-20 pb-0 lg:py-32"
+        className="pt-10 pb-0 md:pt-20 lg:py-32"
         id="testimonial-section"
       >
         <div className="mx-auto max-w-7xl sm:py-4 lg:px-8 ">
           <div className="text-center">
             <h3
               data-aos="fade-down"
-              className="text-4xl sm:text-6xl font-bold text-black my-3"
+              className="my-3 text-4xl font-bold text-black sm:text-6xl"
             >
               Apa kata klien kami?
             </h3>
             <h3
               data-aos="fade-down"
-              className="text-4xl sm:text-6xl font-bold text-black text-opacity-50 lg:mr-48 my-4"
+              className="my-4 text-4xl font-bold text-black text-opacity-50 sm:text-6xl lg:mr-48"
             >
               Apa kata klien kami?
             </h3>
             <h3
               data-aos="fade-down"
-              className="text-4xl sm:text-6xl font-bold text-black text-opacity-25 lg:-mr-32 my-4"
+              className="my-4 text-4xl font-bold text-black text-opacity-25 sm:text-6xl lg:-mr-32"
             >
               Apa kata klien kami?
             </h3>
           </div>
 
-          <Slider {...settings}>
+          {/* <Slider {...settings}>
             {postData.map((items, i) => (
               <div data-aos="fade-up" key={i} className="relative">
-                <div className="bg-white test-sha m-3 p-10 my-20 rounded-3xl border">
+                <div className="p-10 m-3 my-20 bg-white border test-sha rounded-3xl">
                   <Image
                     src={items.imgSrc}
                     alt={items.imgSrc}
                     width={71}
                     height={71}
-                    className="inline-block m-auto absolute test-pos"
+                    className="absolute inline-block m-auto test-pos"
                   />
-                  <h4 className="text-base font-medium text-testColor my-4">
+                  <h4 className="my-4 text-base font-medium text-testColor">
                     {items.comment}
                   </h4>
                   <hr style={{ color: "lightgrey" }} />
                   <div className="flex justify-between">
                     <div>
-                      <h3 className="text-base font-medium pt-4 pb-2">
+                      <h3 className="pt-4 pb-2 text-base font-medium">
                         {items.name}
                       </h3>
-                      <h3 className="text-xs font-medium  pb-2 opacity-50">
+                      <h3 className="pb-2 text-xs font-medium opacity-50">
                         {items.profession}
                       </h3>
                     </div>
@@ -166,7 +170,62 @@ export default class MultipleItems extends Component {
                 </div>
               </div>
             ))}
-          </Slider>
+          </Slider> */}
+          <Swiper
+                    modules={[Autoplay]}
+                    autoplay={{ delay: 3000, disableOnInteraction: false }}
+                    speed={600}
+                    loop={true}
+                    slidesPerView={3}
+                    spaceBetween={20}
+                    breakpoints={{
+                      1200: {
+                        slidesPerView: 3,
+                      },
+                      800: {
+                        slidesPerView: 2,
+                      },
+                      0: {
+                        slidesPerView: 1,
+                      },
+                    }}
+                    className="mt-10"
+                  >
+                    {postData.map((item, i) => (
+                      <SwiperSlide key={i} className="relative">
+                      <div className="p-10 m-3 my-20 bg-white border test-sha rounded-3xl">
+                      <Image
+                        src={item.imgSrc}
+                        alt={item.imgSrc}
+                        width={71}
+                        height={71}
+                        className="absolute inline-block m-auto test-pos"
+                      />
+                      <h4 className="my-4 text-base font-medium text-testColor">
+                        {item.comment}
+                      </h4>
+                      <hr style={{ color: "lightgrey" }} />
+                      <div className="flex justify-between">
+                        <div>
+                          <h3 className="pt-4 pb-2 text-base font-medium">
+                            {item.name}
+                          </h3>
+                          <h3 className="pb-2 text-xs font-medium opacity-50">
+                            {item.profession}
+                          </h3>
+                        </div>
+                        <div className="flex">
+                          <StarIcon width={20} className="star" />
+                          <StarIcon width={20} className="star" />
+                          <StarIcon width={20} className="star" />
+                          <StarIcon width={20} className="star" />
+                          <StarIcon width={20} className="star" />
+                        </div>
+                      </div>
+                    </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
         </div>
       </section>
     );
