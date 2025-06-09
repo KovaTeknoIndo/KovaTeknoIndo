@@ -2,6 +2,7 @@
 import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState, ReactNode } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Contactusform from "./Contactus";
@@ -14,10 +15,11 @@ interface NavigationItem {
 
 const navigation: NavigationItem[] = [
   { name: "Beranda", href: "/", current: false },
-  // { name: "Layanan", href: "#services-section", current: false },
   { name: "Layanan", href: "/layanan", current: false },
-  // { name: "FAQ", href: "#faq-section", current: false },
-  // { name: "Testimoni", href: "#testimonial-section", current: false },
+  { name: "Gallery", href: "/galery", current: false },
+  // { name: "Layanan", href: "#services-section", current: false },
+  { name: "FAQ", href: "#faq-section", current: false },
+  { name: "Testimoni", href: "#testimonial-section", current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -25,6 +27,15 @@ function classNames(...classes: string[]) {
 }
 
 const Navbar = () => {
+  const pathname = usePathname();
+
+  const isHome = pathname === "/";
+
+  const filteredNavigation = isHome
+    ? navigation
+    : navigation.filter((item) =>
+        ["/", "/galery", "/layanan"].includes(item.href)
+      );
   const [isOpen, setIsOpen] = useState(false);
   const [showNav, setShowNav] = useState(true);
   const [isTop, setIsTop] = useState(true);
@@ -59,11 +70,11 @@ const Navbar = () => {
       )}
     >
       <>
-        <div className="mx-auto max-w-7xl p-3 md:p-4 lg:px-8">
-          <div className="relative flex h-12 lg:h-20 items-center">
-            <div className="flex flex-1 items-center sm:justify-between">
+        <div className="p-3 mx-auto max-w-7xl md:p-4 lg:px-8">
+          <div className="relative flex items-center h-12 lg:h-20">
+            <div className="flex items-center flex-1 sm:justify-between">
               {/* LOGO */}
-              <div className="flex flex-shrink-0 items-center">
+              <div className="flex items-center flex-shrink-0">
                 <Link href="/">
                   <div className="relative w-[120px] lg:w-40 h-[150px] mr-20">
                     <Image
@@ -79,9 +90,9 @@ const Navbar = () => {
 
               <div className="flex items-center">
                 {/* LINKS */}
-                <div className="hidden lg:flex items-center">
+                <div className="items-center hidden lg:flex">
                   <div className="flex justify-end space-x-4">
-                    {navigation.map((item) => (
+                    {filteredNavigation.map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
@@ -140,9 +151,9 @@ const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <article className="relative max-w-lg pb-10 flex flex-col space-y-4 h-full">
-          <header className="px-3 py-3 flex items-center justify-between">
-            <div className="flex  items-center">
+        <article className="relative flex flex-col h-full max-w-lg pb-10 space-y-4">
+          <header className="flex items-center justify-between px-3 py-3">
+            <div className="flex items-center">
               <Link href="/" className="text-2xl font-semibold text-black">
                 <Image
                   src="/images/navbar/kovaLogo1.png"
@@ -154,7 +165,7 @@ const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
               </Link>
             </div>
             <XMarkIcon
-              className="block h-7 w-7 cursor-pointer"
+              className="block cursor-pointer h-7 w-7"
               onClick={() => setIsOpen(false)}
             />
           </header>
@@ -170,12 +181,21 @@ const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
 };
 
 const DrawerData = () => {
+  const pathname = usePathname();
+
+  const isHome = pathname === "/";
+
+  const filteredNavigation = isHome
+    ? navigation
+    : navigation.filter((item) =>
+        ["/", "/galery", "/layanan"].includes(item.href)
+      );
   return (
-    <div className="rounded-md max-w-sm w-full mx-auto absolute">
-      <div className="flex-1 space-y-4 py-1">
+    <div className="absolute w-full max-w-sm mx-auto rounded-md">
+      <div className="flex-1 py-1 space-y-4">
         <div className="sm:block">
-          <div className="px-5 flex flex-col gap-4">
-            {navigation.map((item) => (
+          <div className="flex flex-col gap-4 px-5">
+            {filteredNavigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -193,7 +213,7 @@ const DrawerData = () => {
             <a
               href="https://wa.link/r7eklb"
               target="_blank"
-              className="mt-2 text-center bg-blueprimary w-full hover:text-white text-white border border-purple font-medium py-2 px-4 rounded-full"
+              className="w-full px-4 py-2 mt-2 font-medium text-center text-white border rounded-full bg-blueprimary hover:text-white border-purple"
             >
               Kontak Kami
             </a>
