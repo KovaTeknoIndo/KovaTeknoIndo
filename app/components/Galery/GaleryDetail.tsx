@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import Image from 'next/image';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -48,10 +49,13 @@ export default function GaleryDetail({
             >
               {images.map((src, idx) => (
                 <SwiperSlide key={`${src}-${idx}`}>
-                  <img
+                  <Image
                     src={src}
-                    alt={`${title} image ${idx + 1}`}
-                    className="object-cover w-full h-auto"
+                    alt={`Slide ${idx + 1}`}
+                    width={800} // atau ukuran asli gambarnya
+                    height={500}
+                    className="object-cover w-full"
+                    priority={idx === 0} // optimasi LCP
                   />
                 </SwiperSlide>
               ))}

@@ -15,6 +15,16 @@ const categories = [
     { label: "Branding", value: "branding" },
     { label: "Books", value: "books" },
 ];
+const slugify = (text: string) => 
+  text
+    .toString()
+    .normalize("NFKD") // untuk karakter non-ASCII
+    .replace(/[\u0300-\u036f]/g, "") // hapus diakritik
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w\-]+/g, "")
+    .replace(/\-\-+/g, "-");
 
 const PortfolioSection: React.FC = () => {
     useEffect(() => {
@@ -25,11 +35,17 @@ const PortfolioSection: React.FC = () => {
         lightbox.destroy();
       };
     }, []);
+  
     const [activeFilter, setActiveFilter] = useState("*");
     const filteredItems =
         activeFilter === "*"
         ? portfolioItems
         : portfolioItems.filter((item) => item.category === activeFilter);
+
+    const itemsWithSlug = filteredItems.map((item) => ({
+      ...item,
+      slug: slugify(item.title),
+    }));
 
   return (
     <section id="services-section" className="px-20 py-20 mt-20 lg:pb-44 bg-gray-50">
@@ -51,7 +67,7 @@ const PortfolioSection: React.FC = () => {
             ))}
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {filteredItems.map((item, index) => (
+            {itemsWithSlug.map((item, index) => (
                 <div
                 key={index}
                 data-aos="fade-up"
@@ -85,7 +101,7 @@ const PortfolioSection: React.FC = () => {
                     >
                       <Search className="w-5 h-5" />
                     </a>
-                    <Link href={`/galery/${item.slug}/detail`}  className="transition hover:text-blue-400">
+                    <Link href={`/galery/${item.slug}`}  className="transition hover:text-blue-400">
                       <LinkIcon className="w-6 h-6" />
                     </Link>
                     </div>
