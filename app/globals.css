@@ -4,11 +4,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'swiper/css';
-@import 'swiper/css/pagination';
+/* @import "swiper/css"; */
+/* @import 'swiper/css/pagination'; */
 /* SLICK CAROUSEL LINKS */
-@import "slick-carousel/slick/slick.css";
-@import "slick-carousel/slick/slick-theme.css";
+/* @import "slick-carousel/slick/slick.css"; */
+/* @import "slick-carousel/slick/slick-theme.css"; */
 
 html,
 body {
@@ -45,6 +45,17 @@ html {
   --scroll-behavior: smooth !important;
   scroll-behavior: smooth !important;
 }
+
+/* styles/globals.css atau tailwind.config.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 
 .navbar {
   border-bottom: 0.5px solid rgba(196, 196, 196, 0.75);

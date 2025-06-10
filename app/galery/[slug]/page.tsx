@@ -1,35 +1,16 @@
 import { notFound } from 'next/navigation';
+import { portfolioItems } from '@/lib/Galery';
 import PortfolioDetail from '@/app/components/Galery/GaleryDetail';
-import { portfolioItems } from '@/config/Galery';
-
-// Fungsi bantu untuk buat slug
-const slugify = (text: string) => 
-  text
-    .toString()
-    .normalize("NFKD") // untuk karakter non-ASCII
-    .replace(/[\u0300-\u036f]/g, "") // hapus diakritik
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, "-")
-    .replace(/[^\w\-]+/g, "")
-    .replace(/\-\-+/g, "-");
 
 
-// ✅ Static parameter generation
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return portfolioItems.map((item) => ({
-    slug: slugify(item.title),
+    slug: item.slug,
   }));
 }
 
-// ✅ Pastikan function ini tidak async
-const PortfolioPage = ({ params }: { params: { slug: string } }) => {
-
-  const slug = params.slug;
-
-  const portfolio = portfolioItems.find(
-    (item) => slugify(item.title) === slug
-  );
+export default function PortfolioPage({params}:any){
+  const portfolio = portfolioItems.find((item) => item.slug === params.slug);
 
   if (!portfolio) return notFound();
 
@@ -37,12 +18,11 @@ const PortfolioPage = ({ params }: { params: { slug: string } }) => {
     <PortfolioDetail
       title={portfolio.title}
       category={portfolio.category}
-      client={portfolio.client || 'Unknown Client'}
-      date={portfolio.date || 'Unknown Date'}
-      url={portfolio.url || '#'}
-      description={portfolio.description || ''}
+      client="Unknown Client"
+      date="Unknown Date"
+      url={portfolio.url}
+      description=""
       images={portfolio.images}
     />
   );
 }
-export default PortfolioPage;

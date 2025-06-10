@@ -3,7 +3,7 @@ import Script from "next/script";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Chat from "./components/Contact/Chat";
-import ModalProvider from "./components/Contact/ModalProvider"; // 👈 Client component
+import ModalProvider from "./components/Contact/ModalProvider"; // Client component
 
 export const metadata = {
   title: {
@@ -58,7 +58,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="relative overflow-x-hidden">
+      <body className="relative overflow-x-hidden" suppressHydrationWarning>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-505RVXTE04"
           strategy="afterInteractive"
