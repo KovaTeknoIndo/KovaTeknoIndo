@@ -1,14 +1,17 @@
 // Definisikan tipe item portfolio
-export type PortfolioCategory = 'app' | 'product' | 'branding' | 'books';
-
+export type Category = 'landing page' | 'portfolio' | 'admin panel';
+export type Type = 'basic' | 'standart' | 'premium';
+export const allCategories: Category[] = ['landing page', 'portfolio', 'admin panel'];
+export const allType: Type[] = ['basic', 'standart', 'premium'];
 export interface PortfolioItem {
-  category: PortfolioCategory;
+  category: Category;
+  type:Type;
   title: string;
-  slug?: string;
+  tagline?:string;
+  slug?: any;
   url?: any;
   images: string[];
-  client?: string;
-  date?: string;
+  page?:string;
   description?: string;
 }
 
@@ -26,45 +29,70 @@ const slugify = (text: string) =>
 // Data portfolio
 const rawItems: Omit<PortfolioItem, "slug">[] = [
     {
-        category: "app",
-        title: "App 1",
-        url: "https://klinin.kovatekno.my.id",
-        images: [
-          "/assets/img/portfolio/app-1.jpg",
-          "/assets/img/portfolio/app-2.jpg",
-          "/assets/img/portfolio/app-3.jpg",
-        ]
-      },
-      {
-        category: "product",
-        title: "Product 1",
-        url: "https://klinin.kovatekno.my.id",
-        images: [
-          "/assets/img/portfolio/product-1.jpg",
-          "/assets/img/portfolio/product-2.jpg",
-          "/assets/img/portfolio/product-3.jpg",
-        ]
-      },
-      {
-        category: "branding",
-        title: "Branding 1",
-        url: "https://klinin.kovatekno.my.id",
-        images: [
-          "/assets/img/portfolio/branding-1.jpg",
-          "/assets/img/portfolio/branding-2.jpg",
-          "/assets/img/portfolio/branding-3.jpg",
-        ]
-      },
-      {
-        category: "books",
-        title: "Books 1",
-        url: "https://klinin.kovatekno.my.id",
-        images: [
-          "/assets/img/portfolio/books-1.jpg",
-          "/assets/img/portfolio/books-2.jpg",
-          "/assets/img/portfolio/books-3.jpg",
-        ]
-      },
+      category: "landing page",
+      type: "premium",
+      title: "Ace",
+      tagline:"Web cepat dan tepat",
+      url: "https://ace.kovatekno.my.id",
+      images: [
+        "/images/galery/ace-1.png",
+        "/images/galery/ace-2.png",
+      ],
+      page: "5",
+      description: "Ace landing page"
+    },
+    {
+      category: "landing page",
+      type: "basic",
+      title: "Chevory",
+      tagline:"Web cepat dan tepat",
+      url: "https://chevory.kovatekno.my.id",
+      images: [
+        "/images/galery/chevory-1.png",
+        "/images/galery/chevory-2.png",
+      ],
+      page: "1",
+      description: "Chevory landing page"
+    },
+    {
+      category: "landing page",
+      type: "basic",
+      title: "Klinin",
+      tagline:"Web cepat dan tepat",
+      url: "https://klinin.kovatekno.my.id",
+      images: [
+        "/images/galery/klinin-1.png",
+        "/images/galery/klinin-2.png",
+      ],
+      page: "1",
+      description: "Klinin landing page"
+    },
+    {
+      category: "landing page",
+      type: "basic",
+      title: "Landing",
+      tagline:"Web cepat dan tepat",
+      url: "https://landing.kovatekno.my.id",
+      images: [
+        "/images/galery/landing-1.png",
+        "/images/galery/landing-2.png",
+      ],
+      page: "5",
+      description: "Ace landing page"
+    },
+    {
+      category: "landing page",
+      type: "basic",
+      title: "e-Learning",
+      tagline:"Web cepat dan tepat",
+      url: "https://e-learning.kovatekno.my.id",
+      images: [
+        "/images/galery/learning-1.png",
+        "/images/galery/learning-2.png",
+      ],
+      page: "1",
+      description: "Ace landing page"
+    },
 ]
 export const portfolioItems: PortfolioItem[] = rawItems.map((item) => ({
     ...item,

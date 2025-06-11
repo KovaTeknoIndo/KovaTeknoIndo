@@ -6,28 +6,20 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
+import type { PortfolioItem } from '@/lib/Galery';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-interface PortfolioDetailProps {
-  title: string;
-  category: string;
-  client: string;
-  date: string;
-  url: string;
-  description: string;
-  images: string[];
-}
+import { capitalizeWords } from '@/utils/Capitalize';
 
 export default function GaleryDetail({
-  title,
   category,
-  client,
-  date,
+  type,
+  title,
   url,
+  page,
   description,
   images,
-}: PortfolioDetailProps) {
+}: PortfolioItem) {
   useEffect(() => {
     AOS.init({ once: true });
   }, []);
@@ -77,16 +69,16 @@ export default function GaleryDetail({
               </h3>
               <ul className="space-y-1 text-sm text-gray-700">
                 <li>
-                  <strong>Category</strong>: {category.toUpperCase()}
+                  <strong>Category</strong>: {capitalizeWords(category)}
                 </li>
                 <li>
-                  <strong>Client</strong>: {client.toUpperCase()}
+                  <strong>Type</strong>: {capitalizeWords(type)}
                 </li>
                 <li>
-                  <strong>Project Date</strong>: {date}
+                  <strong>Jumlah Halaman</strong>: {page}
                 </li>
                 <li>
-                  <strong>Project URL</strong>:{" "}
+                  <strong>Demo</strong>:{" "}
                   <a
                     href={url}
                     target="_blank"

@@ -1,0 +1,11 @@
+<!-- Simpan sebagai no-results.svg -->
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" rx="20" fill="#F9FAFB"/>
+  <path d="M300 100C300 138.66 266.63 170 225 170C183.37 170 150 138.66 150 100C150 61.34 183.37 30 225 30C266.63 30 300 61.34 300 100Z" fill="#E5E7EB"/>
+  <path d="M220 90H230V110H220V90ZM220 120H230V130H220V120Z" fill="#9CA3AF"/>
+  <path d="M245 145L270 170" stroke="#9CA3AF" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="225" cy="100" r="70" stroke="#D1D5DB" stroke-width="2"/>
+  <text x="200" y="250" fill="#6B7280" font-size="16" font-family="sans-serif" text-anchor="middle">
+    Tidak ada hasil ditemukan
+  </text>
+</svg>

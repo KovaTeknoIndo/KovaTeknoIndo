@@ -34,7 +34,7 @@ const Navbar = () => {
   const filteredNavigation = isHome
     ? navigation
     : navigation.filter((item) =>
-        ["/", "/galery", "/layanan"].includes(item.href)
+        ["/", "/galery", "/pricing"].includes(item.href)
       );
   const [isOpen, setIsOpen] = useState(false);
   const [showNav, setShowNav] = useState(true);
@@ -210,13 +210,13 @@ const DrawerData = () => {
                 {item.name}
               </Link>
             ))}
-            <a
+            <Link
               href="https://wa.link/r7eklb"
               target="_blank"
               className="w-full px-4 py-2 mt-2 font-medium text-center text-white border rounded-full bg-blueprimary hover:text-white border-purple"
             >
               Kontak Kami
-            </a>
+            </Link>
           </div>
         </div>
       </div>
