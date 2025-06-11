@@ -62,9 +62,10 @@ const Banner = () => {
         <div className="lg:-m-24 lg:pt-[100px] lg:absolute right-[50px] lg:right-[80px] xl:right-[50px] top-0 flex justify-center items-center">
           <Image
             src="/images/banner/banner.webp"
-            alt="gambar hero"
+            alt="hero"
             width={560}
             height={542}
+            priority // <--- penting untuk LCP!
             className="w-full md:w-[500px] lg:w-[490px] xl:w-[560px]"
           />
         </div>

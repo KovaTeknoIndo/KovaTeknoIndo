@@ -78,7 +78,7 @@ const Navbar = () => {
                 <Link href="/">
                   <div className="relative w-[120px] lg:w-40 h-[150px] mr-20">
                     <Image
-                      src="/images/navbar/kovaLogo1.png"
+                      src="/images/navbar/kovaLogo1.webp"
                       alt="Kova Logo"
                       fill
                       className="object-contain"
