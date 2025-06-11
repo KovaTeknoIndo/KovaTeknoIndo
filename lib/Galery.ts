@@ -35,8 +35,8 @@ const rawItems: Omit<PortfolioItem, "slug">[] = [
       tagline:"Web cepat dan tepat",
       url: "https://ace.kovatekno.my.id",
       images: [
-        "/images/galery/ace-1.png",
-        "/images/galery/ace-2.png",
+        "/images/galery/ace-1.webp",
+        "/images/galery/ace-2.webp",
       ],
       page: "5",
       description: "Ace landing page"
@@ -48,8 +48,8 @@ const rawItems: Omit<PortfolioItem, "slug">[] = [
       tagline:"Web cepat dan tepat",
       url: "https://chevory.kovatekno.my.id",
       images: [
-        "/images/galery/chevory-1.png",
-        "/images/galery/chevory-2.png",
+        "/images/galery/chevory-1.webp",
+        "/images/galery/chevory-2.webp",
       ],
       page: "1",
       description: "Chevory landing page"
@@ -61,8 +61,8 @@ const rawItems: Omit<PortfolioItem, "slug">[] = [
       tagline:"Web cepat dan tepat",
       url: "https://klinin.kovatekno.my.id",
       images: [
-        "/images/galery/klinin-1.png",
-        "/images/galery/klinin-2.png",
+        "/images/galery/klinin-1.webp",
+        "/images/galery/klinin-2.webp",
       ],
       page: "1",
       description: "Klinin landing page"
@@ -74,8 +74,8 @@ const rawItems: Omit<PortfolioItem, "slug">[] = [
       tagline:"Web cepat dan tepat",
       url: "https://landing.kovatekno.my.id",
       images: [
-        "/images/galery/landing-1.png",
-        "/images/galery/landing-2.png",
+        "/images/galery/landing-1.webp",
+        "/images/galery/landing-2.webp",
       ],
       page: "5",
       description: "Ace landing page"
@@ -87,8 +87,8 @@ const rawItems: Omit<PortfolioItem, "slug">[] = [
       tagline:"Web cepat dan tepat",
       url: "https://e-learning.kovatekno.my.id",
       images: [
-        "/images/galery/learning-1.png",
-        "/images/galery/learning-2.png",
+        "/images/galery/learning-1.webp",
+        "/images/galery/learning-2.webp",
       ],
       page: "1",
       description: "Ace landing page"

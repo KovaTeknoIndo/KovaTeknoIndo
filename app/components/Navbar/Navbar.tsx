@@ -156,7 +156,7 @@ const Drawer = ({ children, isOpen, setIsOpen }: DrawerProps) => {
             <div className="flex items-center">
               <Link href="/" className="text-2xl font-semibold text-black">
                 <Image
-                  src="/images/navbar/kovaLogo1.png"
+                  src="/images/navbar/kovaLogo1.webp"
                   alt="Kova Logo"
                   width={120}
                   height={60}

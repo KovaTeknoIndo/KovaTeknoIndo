@@ -18,8 +18,6 @@ type Props = {
 
 export default function PortfolioPage({params}:any){
   const portfolio = portfolioItems.find((item) => item.slug == params.slug);
-  console.log('portfolioItems:', portfolio);
-
   if (!portfolio) return notFound();
 
   return (

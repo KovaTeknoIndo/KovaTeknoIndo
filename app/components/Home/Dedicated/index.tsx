@@ -6,7 +6,7 @@ const Dedicated = () => {
       <div className="px-4 mx-auto my-20 max-w-7xl sm:py-20 lg:px-8">
         <div className="relative">
           <Image
-            src="/images/dedicated/spiral.png"
+            src="/images/dedicated/spiral.webp"
             height={272}
             width={686}
             alt="desain-spiral"

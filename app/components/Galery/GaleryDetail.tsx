@@ -10,6 +10,7 @@ import type { PortfolioItem } from '@/lib/Galery';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { capitalizeWords } from '@/utils/Capitalize';
+import Link from 'next/link';
 
 export default function GaleryDetail({
   category,
@@ -79,14 +80,14 @@ export default function GaleryDetail({
                 </li>
                 <li>
                   <strong>Demo</strong>:{" "}
-                  <a
+                  <Link
                     href={url}
                     target="_blank"
                     rel="noreferrer"
                     className="text-blue-600 underline break-words"
                   >
                     {url}
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

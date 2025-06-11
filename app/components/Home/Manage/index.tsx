@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Crown, Gem, Badge } from "lucide-react";
+import { Crown, Gem, Badge, Link } from "lucide-react";
 
 import { plans, Plan } from "../../../../config/Manage";
 import { planStyles } from "../../../../config/style";
@@ -95,7 +95,7 @@ const Manage: React.FC = () => {
                   </div>
 
                   {/* Tombol CTA */}
-                  <a
+                  <Link
                     href={plan.href}
                     target="_blank"
                     className={`inline-block text-sm font-bold rounded-full py-3 px-12 mb-8 transition-all duration-300 ${
@@ -107,7 +107,7 @@ const Manage: React.FC = () => {
                     }`}
                   >
                     {plan.button}
-                  </a>
+                  </Link>
 
                   {/* Garis Batas */}
                   <hr

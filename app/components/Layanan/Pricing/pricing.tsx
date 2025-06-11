@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Crown, Gem, Badge } from "lucide-react";
+import { Crown, Gem, Badge, Link } from "lucide-react";
 
 import { plans, Plan } from "../../../../config/Manage"; // Bisa kamu buat file baru jika isi plan beda
 import { planStyles } from "../../../../config/style";
@@ -96,7 +96,7 @@ const Pricing: React.FC<PricingProps> = ({
                     )}
                   </div>
 
-                  <a
+                  <Link
                     href={plan.href}
                     target="_blank"
                     className={`inline-block text-sm font-bold rounded-full py-3 px-12 mb-8 transition-all duration-300 ${
@@ -108,7 +108,7 @@ const Pricing: React.FC<PricingProps> = ({
                     }`}
                   >
                     {plan.button}
-                  </a>
+                  </Link>
 
                   <hr
                     className={`border ${

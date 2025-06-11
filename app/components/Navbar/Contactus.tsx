@@ -42,16 +42,16 @@ const Contactusform = () => {
 
   return (
     <>
-      <div className=" inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto md:ml-6 sm:pr-0">
+      <div className="inset-y-0 right-0 flex items-center pr-2  sm:static sm:inset-auto md:ml-6 sm:pr-0">
 
         <div className="hidden lg:block">
-          <a
+          <Link
             href="https://wa.link/r7eklb"
             target="_blank"
-            className="justify-end text-xl font-semibold bg-transparent py-4 px-6 lg:px-12 navbutton rounded-full hover:bg-bluehover hover:text-white transition ease-in-out duration-300"
+            className="justify-end px-6 py-4 text-xl font-semibold transition duration-300 ease-in-out bg-transparent rounded-full lg:px-12 navbutton hover:bg-bluehover hover:text-white"
           >
             Kontak Kami
-          </a>
+          </Link>
         </div>
       </div>
       

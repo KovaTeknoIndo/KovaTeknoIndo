@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { FaWhatsapp, FaInstagram, FaTimes } from "react-icons/fa";
 
@@ -29,7 +30,7 @@ const Chat = () => {
     <>
       {/* Tombol Chat dan Bubble */}
       <div
-        className="fixed bottom-5 right-5 md:bottom-10 md:right-10 lg:bottom-7 lg:right-7 xl:bottom-10 xl:right-10 z-50 flex items-center space-x-2 sm:space-x-3 group"
+        className="fixed z-50 flex items-center space-x-2 bottom-5 right-5 md:bottom-10 md:right-10 lg:bottom-7 lg:right-7 xl:bottom-10 xl:right-10 sm:space-x-3 group"
       >
         {/* Bubble teks */}
         <div
@@ -62,7 +63,7 @@ const Chat = () => {
       {/* Modal Kontak */}
       {isVisible && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm px-4"
+          className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black bg-opacity-50 backdrop-blur-sm"
           onClick={() => setShowModal(false)}
         >
           <div
@@ -73,19 +74,19 @@ const Chat = () => {
           >
             {/* Tombol Close */}
             <button
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+              className="absolute text-gray-500 top-4 right-4 hover:text-gray-800"
               onClick={() => setShowModal(false)}
               aria-label="Close"
             >
               <FaTimes size={20} />
             </button>
 
-            <h2 className="text-base sm:text-lg font-semibold mb-4 text-gray-800 border-b border-black pb-4">
+            <h2 className="pb-4 mb-4 text-base font-semibold text-gray-800 border-b border-black sm:text-lg">
               Hubungi Kami
             </h2>
 
-            <div className="mt-7 flex flex-col items-center gap-4">
-              <a
+            <div className="flex flex-col items-center gap-4 mt-7">
+              <Link
                 href="https://wa.link/r7eklb"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -93,9 +94,9 @@ const Chat = () => {
               >
                 <FaWhatsapp size={24} />
                 WhatsApp
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="https://www.instagram.com/kovatekno/profilecard/?igsh=MWR4Nm12M2Rmc3U2Zw=="
                 target="_blank"
                 rel="noopener noreferrer"
@@ -103,7 +104,7 @@ const Chat = () => {
               >
                 <FaInstagram size={24} />
                 Instagram
-              </a>
+              </Link>
             </div>
           </div>
         </div>

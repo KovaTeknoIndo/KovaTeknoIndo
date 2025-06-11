@@ -7,7 +7,10 @@ const nextConfig = {
   output: "export",
   images: {
     unoptimized: true,
+    formats: ["image/webp", "image/avif"],
+    domains: ["cdn.domainanda.com"],
   },
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;

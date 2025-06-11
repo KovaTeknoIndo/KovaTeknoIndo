@@ -2,10 +2,10 @@ import Image from "next/image";
 
 const Index = () => {
   return (
-    <section className="relative mx-auto max-w-7xl px-4 mt-20 lg:pt-20 lg:pb-24 lg:px-8">
+    <section className="relative px-4 mx-auto mt-20 max-w-7xl lg:pt-20 lg:pb-24 lg:px-8">
       {/* <h2
         data-aos="fade-down"
-        className="text-center text-4xl lg:text-65xl  font-bold text-blueprimary"
+        className="text-4xl font-bold text-center lg:text-65xl text-blueprimary"
       ></h2> */}
       <h4
         data-aos="fade-down"
@@ -23,7 +23,7 @@ const Index = () => {
       </h3>
       <div data-aos="zoom-in" className="grid grid-cols-1 py-9 md:mt-16">
         <Image
-          src="/images/team/teamimg.jpg"
+          src="/images/team/teamimg.webp"
           alt="gambar-kantor"
           className="rounded-2xl"
           height={684}

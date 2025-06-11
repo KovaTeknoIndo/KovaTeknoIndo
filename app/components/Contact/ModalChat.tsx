@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaTimes, FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 interface ContactModalProps {
@@ -8,7 +9,7 @@ interface ContactModalProps {
 const ContactModal: React.FC<ContactModalProps> = ({ showModal, setShowModal }) => {
   return (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm px-4"
+          className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black bg-opacity-50 backdrop-blur-sm"
           onClick={() => setShowModal(false)}
         >
           <div
@@ -20,19 +21,19 @@ const ContactModal: React.FC<ContactModalProps> = ({ showModal, setShowModal }) 
           >
             {/* Close Icon */}
             <button
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+              className="absolute text-gray-500 top-4 right-4 hover:text-gray-800"
               onClick={() => setShowModal(false)}
               aria-label="Close"
             >
               <FaTimes size={20} />
             </button>
 
-            <h2 className="text-base sm:text-lg font-semibold mb-4 text-gray-800 border-b border-black pb-4">
+            <h2 className="pb-4 mb-4 text-base font-semibold text-gray-800 border-b border-black sm:text-lg">
               Hubungi Kami
             </h2>
 
-            <div className="mt-7 flex flex-col items-center gap-4">
-              <a
+            <div className="flex flex-col items-center gap-4 mt-7">
+              <Link
                 href="https://wa.link/r7eklb"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -40,9 +41,9 @@ const ContactModal: React.FC<ContactModalProps> = ({ showModal, setShowModal }) 
               >
                 <FaWhatsapp size={24} />
                 WhatsApp
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="https://www.instagram.com/kovatekno/profilecard/?igsh=MWR4Nm12M2Rmc3U2Zw=="
                 target="_blank"
                 rel="noopener noreferrer"
@@ -50,7 +51,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ showModal, setShowModal }) 
               >
                 <FaInstagram size={24} />
                 Instagram
-              </a>
+              </Link>
             </div>
           </div>
         </div>

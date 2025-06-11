@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Banner = () => {
   return (
@@ -25,7 +26,7 @@ const Banner = () => {
             data-aos="zoom-in"
             className="flex gap-2 my-6 text-center lg:my-7 lg:text-start lg:gap-5"
           >
-            <a
+            <Link
               href="#services-section"
               className="py-2 lg:py-4 px-[14px] lg:px-[40px] bg-blueprimary text-[14px] lg:text-[23px] text-white rounded-full flex items-center gap-2 lg:gap-4 hover:bg-bluehover transition ease-in-out duration-300"
             >
@@ -37,9 +38,9 @@ const Banner = () => {
                 className="w-[20px] h-[20px] lg:w-[33px] lg:h-[33px]"
               />
               Mulai Sekarang
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="https://wa.link/r7eklb"
               target="_blank"
               className="py-2 lg:py-4 px-[14px] lg:px-[40px] border border-orangecustom font-semibold text-[14px] lg:text-[23px] text-orangecustom hover:bg-[#e5e5e5] transition ease-in-out duration-300 rounded-full flex items-center gap-2 lg:gap-4"
@@ -52,7 +53,7 @@ const Banner = () => {
                 className="w-[20px] h-[20px] lg:w-[33px] lg:h-[33px]"
               />
               Hubungi Kami
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -60,7 +61,7 @@ const Banner = () => {
 
         <div className="lg:-m-24 lg:pt-[100px] lg:absolute right-[50px] lg:right-[80px] xl:right-[50px] top-0 flex justify-center items-center">
           <Image
-            src="/images/banner/banner.png"
+            src="/images/banner/banner.webp"
             alt="gambar hero"
             width={560}
             height={542}
