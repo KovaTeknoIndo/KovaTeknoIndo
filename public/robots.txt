@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.kovatekno.my.id
+
+# Sitemaps
+Sitemap: https://www.kovatekno.my.id/sitemap.xml
