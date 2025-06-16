@@ -188,7 +188,7 @@ const DrawerData = () => {
   const filteredNavigation = isHome
     ? navigation
     : navigation.filter((item) =>
-        ["/", "/galery", "/layanan"].includes(item.href)
+        ["/", "/galery", "/pricing"].includes(item.href)
       );
   return (
     <div className="absolute w-full max-w-sm mx-auto rounded-md">

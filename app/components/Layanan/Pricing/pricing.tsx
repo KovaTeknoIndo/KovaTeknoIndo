@@ -96,8 +96,7 @@ const Pricing: React.FC<PricingProps> = ({
                     )}
                   </div>
 
-                  <Link
-                    href={plan.href}
+                  <a href={plan.href}
                     target="_blank"
                     className={`inline-block text-sm font-bold rounded-full py-3 px-12 mb-8 transition-all duration-300 ${
                       isPremium
@@ -108,7 +107,7 @@ const Pricing: React.FC<PricingProps> = ({
                     }`}
                   >
                     {plan.button}
-                  </Link>
+                  </a>
 
                   <hr
                     className={`border ${
